@@ -73,37 +73,34 @@ export default function Home() {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Monkeypox Tracker | {currentMonth} {currentYear} Monkeypox cases
+          Ebola Cases | {currentMonth} {currentYear} Ebola Cases
         </title>
         <meta
           name="description"
-          content="Statistics and information on the 2022 Monkeypox virus disease outbreak, including maps, charts, and tables from sources around the world. Inspired by the BNO Monkeypox tracker."
+          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
         />
 
-        <meta
-          property="og:title"
-          content="Monkeypox Tracker - Monkeypox Statistics"
-        />
+        <meta property="og:title" content="Ebola Tracker - Ebola Statistics" />
         <meta
           property="og:description"
-          content="Statistics and information on the 2022 Monkeypox virus disease outbreak, including maps, charts, and tables from sources around the world. Inspired by the BNO Monkeypox tracker."
+          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com/" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="Statistics and information on the 2022 Monkeypox virus disease outbreak, including maps, charts, and tables from sources around the world. Inspired by the BNO Monkeypox tracker."
+          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -123,12 +120,11 @@ export default function Home() {
                   maximumFractionDigits: 2,
                 })}
               </Text>{" "}
-              Monkeypox cases detected
+              Ebola cases detected
             </Heading>
             <Text maxW={"5xl"}>
-              This site is dedicated to tracking the spread of the 2022
-              monkeypox virus disease outbreak, and is updated every few hours.
-              You can{" "}
+              This site is dedicated to tracking the spread of the 2022 Ebola
+              virus disease outbreak, and is updated every few hours. You can{" "}
               <Link href="/countries">
                 <a style={{ color: `${colors.blueMunsell}` }}>
                   view the countries listing page
@@ -159,14 +155,14 @@ export default function Home() {
 
           <Box textAlign={"center"}>
             <Heading as="h2" size="lg" mb={5} mt={"50px"}>
-              Global Monkeypox virus spread over time
+              Global Ebola virus spread over time
             </Heading>
           </Box>
           <WorldTrends />
 
           <Box textAlign={"center"}>
             <Heading as="h2" size="lg" mt={"50px"}>
-              Global confirmed Monkeypox cases
+              Global confirmed Ebola cases
             </Heading>
             <Text size="md" mb={5}>
               Click on a country to view more details
