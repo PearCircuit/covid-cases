@@ -1,4 +1,4 @@
-const siteUrl = "https://www.monkeypoxtracker.net";
+const siteUrl = "https://www.ebola-cases.com";
 
 module.exports = {
   siteUrl,
