@@ -83,7 +83,7 @@ export const getStaticProps = async (context) => {
   const countryDetails = await JSON.parse(countryDetailsText);
 
   const countryDataUrl =
-    "https://raw.githubusercontent.com/owid/monkeypox/main/owid-monkeypox-data.csv";
+    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
   const res = await fetch(countryDataUrl);
   const text = await res.text();
   const jsonArray = await csv().fromString(text);
@@ -396,51 +396,40 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {stateName} {countryDetails.emoji}
         </Heading>
         <Heading as="h2" size="md">
-          Monkeypox Outbreak: State Details
+          Ebola Outbreak: State Details
         </Heading>{" "}
         <Heading as="h2" mt={10} mb={5}>
-          Monkeypox virus disease outbreak in {stateName}, {countryName}: case
+          Ebola virus disease outbreak in {stateName}, {countryName}: case
           counts, deaths, and statistics
         </Heading>
         <Text>
-          Monkeypox is a rare disease caused by infection with the monkeypox
-          virus. Monkeypox virus is part of the same family of viruses as
-          variola virus, the virus that causes smallpox. Monkeypox symptoms are
-          similar to smallpox symptoms, but milder, and monkeypox is rarely
-          fatal.
+          The Ebola virus is a deadly virus that causes hemorrhagic fever in
+          humans and other primates. Symptoms may appear anywhere from 2 to 21
+          days after contact with the virus, with an average of 8 to 10 days.
+          The course of the illness typically progresses from “dry” symptoms
+          initially, such as fever, aches and pains, and fatigue, and then
+          progresses to “wet” symptoms, such as diarrhea and vomiting as the
+          person becomes sicker.
           <br /> <br />
         </Text>
         <Text>
-          This page shows data for the monkeypox disease outbreak currently
-          taking place in <b>{stateName}</b>, located in the {countryName}. This
-          outbreak is part of the larger outbreak taking place in{" "}
-          {countryDetails.region}, specifically in {countryDetails.subregion}.
+          This page shows data for the ebola outbreak currently taking place in{" "}
+          <b>{stateName}</b>, located in the {countryName}. This outbreak is
+          part of the larger outbreak taking place in {countryDetails.region},
+          specifically in {countryDetails.subregion}.
           <br />
           <br />
         </Text>
         <Heading as="h2" size="sm">
           {stateName}-level data
         </Heading>
-        {countryDetails.iso2 == "US" ? (
-          <Text>
-            Monkeypox case data for {stateDetails.name} is available under the
-            US state data tab, which you can also click{" "}
-            <Link href={"/usstates"}>
-              <a style={{ color: `${colors.blueMunsell}` }}>here</a>
-            </Link>{" "}
-            to view.
-            <br />
-            <br />
-          </Text>
-        ) : (
-          <Text>
-            At present, we do not have data specific to {stateName} monkeypox
-            cases or deaths. However, we do have {countryName}-level data, which
-            is presented below.
-            <br />
-            <br />
-          </Text>
-        )}
+        <Text>
+          At present, we do not have data specific to {stateName} ebola cases or
+          deaths. However, we do have {countryName}-level data, which is
+          presented below.
+          <br />
+          <br />
+        </Text>
         <Heading as="h2" size="sm">
           {countryName}-level data
         </Heading>
@@ -455,12 +444,12 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {countryTotalCases == 1 ? `` : `s`} since the start of the outbreak.
           <br />
           <br />
-          You can use the charts on this page to explore the spread of Monkeypox
-          in {countryName}. Lastly, you can see how the {countryName} Monkeypox
+          You can use the charts on this page to explore the spread of ebola in{" "}
+          {countryName}. Lastly, you can see how the {countryName} ebola
           situation compares with the situation globally on the{" "}
           <Link href="/">
             <a style={{ color: `${colors.blueMunsell}` }}>
-              MonkeypoxTracker homepage
+              Ebola-Cases.com homepage
             </a>
           </Link>
           .
@@ -471,7 +460,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <SimpleGrid columns={[1, null, 2]}>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Total Monkeypox Cases</Center>
+              <Center mb={1}>{countryName}: Total Ebola Cases</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -486,7 +475,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Monkeypox Cases per Million</Center>
+              <Center mb={1}>{countryName}: Ebola Cases per Million</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -501,7 +490,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Monkeypox Deaths</Center>
+              <Center mb={1}>{countryName}: Ebola Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -516,8 +505,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source:{" "}
-          <a href={"https://ourworldindata.org/monkeypox"}>OurWorldInData</a>.
+          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
           Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Container>

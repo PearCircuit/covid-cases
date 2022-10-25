@@ -376,7 +376,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           {countryName} {countryDetails.emoji}
         </Heading>
         <Heading as="h2" size="md">
-          Monkeypox Outbreak: Country Details
+          Ebola Outbreak: Country Details
         </Heading>{" "}
         <StatGroup mt={5} mb={5}>
           <Stat>
@@ -402,19 +402,28 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </Stat>
         </StatGroup>
         <Heading as="h2" mt={10} mb={5}>
-          Monkeypox virus disease outbreak in {countryName}: case counts,
-          deaths, and statistics
+          Ebola virus disease outbreak in {countryName}: case counts, deaths,
+          and statistics
         </Heading>
         <Text>
-          Monkeypox is a rare disease caused by infection with the monkeypox
-          virus. Monkeypox virus is part of the same family of viruses as
-          variola virus, the virus that causes smallpox. Monkeypox symptoms are
-          similar to smallpox symptoms, but milder, and monkeypox is rarely
-          fatal.
+          Ebola virus disease, or EVD, is a deadly disease with occasional
+          outbreaks that occur mostly on the African continent. EVD most
+          commonly affects people and nonhuman primates, such as monkeys,
+          gorillas, and chimpanzees. It is caused by an infection with a group
+          of viruses within the genus Ebolavirus. <br /> <br />
+        </Text>
+        <Text>
+          The Ebola virus is a deadly virus that causes hemorrhagic fever in
+          humans and other primates. Symptoms may appear anywhere from 2 to 21
+          days after contact with the virus, with an average of 8 to 10 days.
+          The course of the illness typically progresses from “dry” symptoms
+          initially, such as fever, aches and pains, and fatigue, and then
+          progresses to “wet” symptoms, such as diarrhea and vomiting as the
+          person becomes sicker.
           <br /> <br />
         </Text>
         <Text>
-          This page shows data for the monkeypox disease outbreak currently
+          This page shows data for the ebola virus disease outbreak currently
           taking place in {countryName}. This outbreak is part of the larger
           outbreak taking place in {countryDetails.region}, specifically in{" "}
           {countryDetails.subregion}.
@@ -432,12 +441,12 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           {countryTotalCases == 1 ? `` : `s`} since the start of the outbreak.
           <br />
           <br />
-          You can use the charts on this page to explore the spread of Monkeypox
-          in {countryName}. Lastly, you can see how the {countryName} Monkeypox
+          You can use the charts on this page to explore the spread of ebola in{" "}
+          {countryName}. Lastly, you can see how the {countryName} ebola
           situation compares with the situation globally on the{" "}
           <Link href="/">
             <a style={{ color: `${colors.blueMunsell}` }}>
-              MonkeypoxTracker homepage
+              ebola-cases.com homepage
             </a>
           </Link>
           .
@@ -449,7 +458,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         <SimpleGrid columns={[1, null, 2]}>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Total Monkeypox Cases</Center>
+              <Center mb={1}>{countryName}: Total Ebola Cases</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -464,7 +473,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: New Monkeypox Cases </Center>
+              <Center mb={1}>{countryName}: New Ebola Cases </Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -479,7 +488,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Monkeypox Deaths</Center>
+              <Center mb={1}>{countryName}: Ebola Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -494,8 +503,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source:{" "}
-          <a href={"https://ourworldindata.org/monkeypox"}>OurWorldInData</a>.
+          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
           Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
         <Heading mt={5} mb={5} as="h2" size="sm">

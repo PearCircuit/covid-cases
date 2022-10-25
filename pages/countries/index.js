@@ -100,7 +100,7 @@ const Countries = ({ countryList, countryCaseData }) => {
       </Head>
       <Container maxW="5xl">
         <Heading as="h1" mt={5}>
-          Monkeypox cases and deaths by country
+          Ebola cases and deaths by country
         </Heading>
 
         <Container maxW={"5xl"} mt={5}>
@@ -113,11 +113,12 @@ const Countries = ({ countryList, countryCaseData }) => {
         </Container>
 
         <Text mt={5}>
-          Select a country to view more details about their Monkeypox situation.
+          Select a country to view more details about their Ebola situation.
           Each country has a situation report, automatically generated from the
           most recent data. You can also view graphs of the disease activity in
           each country, and review data in tabular form. Data is sourced from
-          Our World In Data and the US CDC.
+          the US CDC and the Ugandan Ministry of Health. Refer to the About and
+          FAQ pages for more information on data sources.
         </Text>
 
         <InputGroup mt={5}>

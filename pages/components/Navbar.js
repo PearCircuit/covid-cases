@@ -71,7 +71,7 @@ const Navbar = () => {
               {/*LOGO*/}
               <Heading fontSize="2xl">
                 <Link href="/" aria-label="Home" my={5} w="100%">
-                  <a onClick={() => changeDisplay("none")}>MonkeypoxTracker</a>
+                  <a onClick={() => changeDisplay("none")}>Ebola-Cases.com</a>
                 </Link>
               </Heading>
             </Flex>

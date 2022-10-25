@@ -12,7 +12,7 @@ export default function WorldTrends() {
 
   useEffect(() => {
     const url =
-      "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/5df654ffaad55ef0850a7426c9e9faede0b3c16b/ebola-case-data.csv";
+      "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
 
     const fetchData = async () => {
       try {
@@ -210,8 +210,7 @@ export default function WorldTrends() {
         </div>
 
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source:{" "}
-          <a href={"https://ourworldindata.org/monkeypox"}>OurWorldInData</a>.
+          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
           Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Box>

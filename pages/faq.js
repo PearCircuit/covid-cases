@@ -60,27 +60,29 @@ export default function FAQ() {
         <Container mt={10} mb={10} maxW={"5xl"}>
           <Heading as="h2">Frequently Asked Questions</Heading>
           <Text>
-            Want to learn more about Monkeypox? The following are some
-            frequently asked questions about the monkeypox virus, the current
-            disease outbreak, and what to do if you are exposed to Monkeypox.
+            Want to learn more about Ebola? The following are some frequently
+            asked questions about the ebola virus, the current disease outbreak,
+            and what to do if you are exposed to ebola.
           </Text>
           <Accordion allowToggle allowMultiple mt={10} mb={10}>
             <AccordionItem>
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>What is Monkeypox?</b>
+                    <b>What is Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  Monkeypox is a rare disease caused by infection with the
-                  monkeypox virus. Monkeypox virus is part of the same family of
-                  viruses as variola virus, the virus that causes smallpox.
-                  Monkeypox symptoms are similar to smallpox symptoms, but
-                  milder, and monkeypox is rarely fatal.
+                  This rare, infectious—and often fatal—disease was discovered
+                  in 1976 in the Democratic Republic of Congo near the Ebola
+                  River. Scientists believe that bats are the most likely
+                  carriers of the Ebola virus. Symptoms include the sudden onset
+                  of fever, fatigue, muscle pain, headache, and sore throat.
+                  This is followed by vomiting, diarrhea, rash, and in some
+                  cases, bleeding.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -96,10 +98,11 @@ export default function FAQ() {
               </h2>
               <AccordionPanel pb={4}>
                 We take a very conservative approach to reporting data. Numbers
-                reported on this site are compiled by the expert team at
-                OurWorldInData or the U.S. CDC. You will note call-outs beneath
-                most data indicating which of the two sources provided the data
-                displayed.
+                reported on this site are compiled from reports by the US CDC,
+                the Ugandan Ministry of Health, or the WHO. You will note
+                call-outs beneath most data indicating which of the two sources
+                provided the data displayed. The Ugandan MOH website here is our
+                current primary source: https://www.health.go.ug/.
               </AccordionPanel>
             </AccordionItem>
 
@@ -107,16 +110,16 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>Are there different variants of Monkeypox?</b>
+                    <b>What should I do if I think I have Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  There are two types of monkeypox virus: West African and Congo
-                  Basin. Infections in the current outbreak are from the West
-                  African type.
+                  Stay home if you feel unwell. If you have a fever, cough and
+                  difficulty breathing, seek medical attention and call in
+                  advance. Follow the directions of your local health authority.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -125,19 +128,16 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>What should I do if I think I have Monkeypox?</b>
+                    <b>What are my chances of death if I have Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  People who think they have monkeypox or have had close
-                  personal contact with someone who has monkeypox should visit a
-                  healthcare provider to help them decide if they need to be
-                  tested for monkeypox. If they decide that you should be
-                  tested, they will work with you to collect the specimens and
-                  send them to a laboratory for testing.
+                  About half of all people infected with Ebola die, but case
+                  fatality rates have varied. Case fatality rates have varied
+                  from 25% to 90% in past outbreaks, according to the WHO.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -146,58 +146,25 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>What are my chances of death if I have Monkeypox?</b>
+                    <b>What are the symptoms of Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                <Text>
-                  Infections with the type of monkeypox virus identified in this
-                  outbreak—the West African type—are rarely fatal. Over 99% of
-                  people who get this form of the disease are likely to survive.
-                  However, people with weakened immune systems, children under 8
-                  years of age, people with a history of eczema, and people who
-                  are pregnant or breastfeeding may be more likely to get
-                  seriously ill or die. The Congo Basin type of monkeypox virus
-                  has a fatality rate around 10%.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <b>What are the symptoms of Monkeypox?</b>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                <p>Symptoms of monkeypox can include:</p>
+                <p>Symptoms of Ebola can include:</p>
                 <ul>
                   <li>Fever </li>
-                  <li>Headache</li>
-                  <li>Muscle aches and backache</li>
-                  <li>Swollen lymph nodes</li>
-                  <li>Chills</li>
+                  <li>Headache and muscle and joint pain</li>
+                  <li>Weakness and fatigue</li>
+                  <li>Sore throat</li>
+                  <li>Loss of apetite</li>
                   <li>
-                    Respiratory symptoms (e.g. sore throat, nasal congestion, or
-                    cough)
+                    Gastrointestinal symptoms including abdominal pain,
+                    diarrhea, and vomiting
                   </li>
-                  <li>
-                    A rash that can look like pimples or blisters that appears
-                    on the face, inside the mouth, and on other parts of the
-                    body, like the hands, feet, chest, genitals, or anus. The
-                    rash goes through different stages before healing
-                    completely. The illness typically lasts 2-4 weeks.
-                  </li>
+                  <li>Unexplained hemorrhaging, bleeding or bruising</li>
                 </ul>
-                <p>
-                  Sometimes, people get a rash first, followed by other
-                  symptoms. Others only experience a rash.
-                </p>
               </AccordionPanel>
             </AccordionItem>
 
@@ -240,49 +207,56 @@ export default function FAQ() {
                 page.
               </AccordionPanel>
             </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <b>How can I view U.S. state-specific data?</b>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                You can view data for specific states by visiting the states tab
-                in the navigation. Note that not all states have data at this
-                time, and thus not all states have detail pages. You can also
-                use this link to travel to the{" "}
-                <Link href="/states" aria-label="States" m={5} w="100%">
-                  <a style={{ color: `${colors.blueMunsell}` }}>
-                    states listing
-                  </a>
-                </Link>{" "}
-                page.
-              </AccordionPanel>
-            </AccordionItem>
 
             <AccordionItem>
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>How does Monkeypox spread?</b>
+                    <b>How does Ebola spread?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  Monkeypox can spread from person to person through direct
-                  contact with the infectious rash, scabs, or body fluids. It
-                  also can be spread by respiratory secretions during prolonged,
-                  face-to-face contact, or during intimate physical contact,
-                  such as kissing, cuddling, or sex. Monkeypox can spread from
-                  the time symptoms start until the rash has fully healed and a
-                  fresh layer of skin has formed. Anyone in close personal
-                  contact with a person with monkeypox can get it and should
-                  take steps to protect themselves.
+                  It is thought that fruit bats of the Pteropodidae family are
+                  natural Ebola virus hosts. Ebola is introduced into the human
+                  population through close contact with the blood, secretions,
+                  organs or other bodily fluids of infected animals such as
+                  fruit bats, chimpanzees, gorillas, monkeys, forest antelope or
+                  porcupines found ill or dead or in the rainforest.
+                  <br /> <br />
+                  Ebola then spreads through human-to-human transmission via
+                  direct contact, through broken skin or mucous membranes, with:
+                  <br /> <br />
+                  1. Blood or body fluids of a person who is sick with or has
+                  died from Ebola
+                  <br /> <br />
+                  2. Objects that have been contaminated with body fluids, like
+                  blood, feces, vomit, from a person sick with Ebola or the body
+                  of a person who died from Ebola Health-care workers have
+                  frequently been infected while treating patients with
+                  suspected or confirmed EVD. This occurs through close contact
+                  with patients when infection control precautions are not
+                  strictly practiced.
+                  <br /> <br />
+                  Burial ceremonies that involve direct contact with the body of
+                  the deceased can also contribute in the transmission of Ebola.
+                  <br /> <br />
+                  People remain infectious as long as their blood contains the
+                  virus.
+                  <br /> <br />
+                  Pregnant women who get acute Ebola and recover from the
+                  disease may still carry the virus in breastmilk, or in
+                  pregnancy related fluids and tissues. This poses a risk of
+                  transmission to the baby they carry, and to others. Women who
+                  become pregnant after surviving Ebola disease are not at risk
+                  of carrying the virus.
+                  <br /> <br />
+                  If a breastfeeding woman who is recovering from Ebola wishes
+                  to continue breastfeeding, she should be supported to do so.
+                  Her breast milk needs to be tested for Ebola before she can
+                  start.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -291,26 +265,22 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>Is Monkeypox a sexually transmitted infection (STI)?</b>
+                    <b>Is Ebola a sexually transmitted infection (STI)?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  Monkeypox can more accurately be described as “sexually
-                  transmissible.” In other words, sex is just one of the ways
-                  that monkeypox can be spread. In the past, Monkeypox virus
-                  disease outbreaks have been linked to direct exposure to
-                  infected animals and animal products, with limited
-                  person-to-person spread. In the current monkeypox outbreak,
-                  the virus is spreading primarily through close personal
-                  contact. This may include contact with infectious lesions or
-                  respiratory secretions via close, sustained skin-to-skin
-                  contact that occurs during sex. However, any close, sustained
-                  skin-to-skin contact with someone who has monkeypox can spread
-                  the virus. The contact does not have to be exclusively
-                  intimate or sexual.
+                  Based on further analysis of ongoing research and
+                  consideration by the WHO Advisory Group on the Ebola Virus
+                  Disease Response, WHO recommends that male survivors of EVD
+                  practice safer sex and hygiene for 12 months from onset of
+                  symptoms or until their semen tests negative twice for Ebola
+                  virus. Contact with body fluids should be avoided and washing
+                  with soap and water is recommended. WHO does not recommend
+                  isolation of male or female convalescent patients whose blood
+                  has been tested negative for Ebola virus.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -319,19 +289,21 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>How can I avoid catching Monkeypox?</b>
+                    <b>How can I avoid catching Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  Avoid close, skin-to-skin contact with people who have a rash
-                  that looks like monkeypox. Avoid contact with objects and
-                  materials that a person with monkeypox has used. Wash your
-                  hands often with soap and water or use an alcohol-based hand
-                  sanitizer, especially before eating or touching your face and
-                  after you use the bathroom.
+                  Good outbreak control relies on applying a package of
+                  interventions, including case management, surveillance and
+                  contact tracing, a good laboratory service, safe burials and
+                  social mobilisation. Community engagement is key to
+                  successfully controlling outbreaks. Raising awareness of risk
+                  factors for Ebola infection and protective measures (including
+                  vaccination) that individuals can take is an effective way to
+                  reduce human transmission.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -340,20 +312,17 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>Should I avoid crowded events?</b>
+                    <b>Is there a cure or treatment for Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  People can get monkeypox if they have close, skin-to-skin
-                  contact with someone who has monkeypox. Early indications are
-                  that events with activities in which people engage in close,
-                  sustained skin-to-skin contact have resulted in cases of
-                  monkeypox. If you plan to attend an event, consider how much
-                  close, personal, skin-to-skin contact is likely to occur
-                  there.
+                  Supportive care - rehydration with oral or intravenous fluids
+                  - and treatment of specific symptoms improves survival. A
+                  range of potential treatments including blood products, immune
+                  therapies and drug therapies are currently being evaluated.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -362,85 +331,42 @@ export default function FAQ() {
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    <b>Is there a cure or treatment for Monkeypox?</b>
+                    <b>Is there a vaccine for Ebola?</b>
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
                 <Text>
-                  There are no treatments specifically for monkeypox virus
-                  infections. However, because of genetic similarities in the
-                  viruses, antiviral drugs used to treat smallpox may be used to
-                  treat monkeypox infections.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <b>Is there a vaccine for Monkeypox?</b>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                <Text>
-                  Because monkeypox and smallpox viruses are genetically
-                  similar, vaccines developed to protect against smallpox
-                  viruses may be used to prevent monkeypox infections. The U.S.
-                  government has two stockpiled vaccines—JYNNEOS and
-                  ACAM2000—that can prevent monkeypox in people who are exposed
-                  to the virus.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <b>Who should get vaccinated?</b>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                CDC recommends vaccination for people who have been exposed to
-                monkeypox and people who may be more likely to get monkeypox,
-                including:
-                <ul>
-                  <li>
-                    People who have been identified by public health officials
-                    as a contact of someone with monkeypox
-                  </li>
-                  <li>
-                    People who know one of their sexual partners in the past 2
-                    weeks has been diagnosed with monkeypox
-                  </li>
-                  <li>
-                    People who had multiple sexual partners in the past 2 weeks
-                    in an area with known monkeypox
-                  </li>
-                </ul>
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    <b>Can I get vaccinated?</b>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                <Text>
-                  If you think you may be eligible for vaccination, contact a
-                  healthcare provider or your local health department. They can
-                  help you determine if you should get vaccinated.
+                  The Ervebo vaccine has been shown to be effective in
+                  protecting people from the species Zaire ebolavirus, and is
+                  recommended by the Strategic Advisory Group of Experts on
+                  Immunization as part of a broader set of Ebola outbreak
+                  response tools. In December 2020, the vaccine was approved by
+                  the US Food and Drug Administration and prequalified by WHO
+                  for use in individuals 18 years of age and older (except for
+                  pregnant and breastfeeding women) for protection against Ebola
+                  virus disease caused by Zaïre Ebola virus.
+                  <br />
+                  <br />
+                  The vaccine had been administrated to more than 350 000 people
+                  in Guinea and in the 2018-2020 Ebola virus disease outbreaks
+                  in the Democratic Republic of the Congo under “compassionate
+                  use” protocol. The vaccine has shown to safe and effective
+                  against the species Zaire ebolavirus. A global stockpile of
+                  the Ervebo vaccine has become available starting January 2021.
+                  <br />
+                  <br />
+                  In May 2020, the European Medicines Agency recommended
+                  granting marketing authorization for a 2-component vaccine
+                  called Zabdeno-and-Mvabea for individuals 1 year and older.
+                  <br />
+                  <br />
+                  The vaccine is delivered in 2 doses: Zabdeno is administered
+                  first and Mvabea is given approximately 8 weeks later as a
+                  second dose. This prophylactic 2-dose regimen is therefore not
+                  suitable for an outbreak response where immediate protection
+                  is necessary.
                 </Text>
               </AccordionPanel>
             </AccordionItem>

@@ -24,7 +24,7 @@ const WorldMapChart = ({ setTooltipContent }) => {
     const fetchData = async () => {
       try {
         const countryCasesUrl =
-          "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/5df654ffaad55ef0850a7426c9e9faede0b3c16b/ebola-case-data.csv";
+          "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
         const countryCasesRes = await fetch(countryCasesUrl);
         const countryCasesText = await countryCasesRes.text();
         const countriesCases = await csv().fromString(countryCasesText);
@@ -114,15 +114,8 @@ const WorldMapChart = ({ setTooltipContent }) => {
       </div>
       <Box>
         <Text mb={5} color={"gray.500"}>
-          Source:{" "}
-          <a
-            href={
-              "https://www.cdc.gov/poxvirus/monkeypox/response/2022/world-map.html"
-            }
-          >
-            CDC.gov
-          </a>
-          . Last update: {Date().toLocaleString().substring(0, 16)}
+          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
+          Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Box>
     </>

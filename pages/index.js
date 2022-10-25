@@ -127,14 +127,8 @@ export default function Home() {
                   view the countries listing page
                 </a>
               </Link>{" "}
-              for a more detailed breakdown. You can also{" "}
-              <Link href="/states">
-                <a style={{ color: `${colors.blueMunsell}` }}>
-                  view the states listing page
-                </a>
-              </Link>{" "}
-              for a breakdown of U.S. cases by state. Follow us on twitter for
-              more updates, or follow our partner{" "}
+              for a more detailed breakdown. Follow us on twitter for more
+              updates, or follow our partner{" "}
               <a
                 href="https://twitter.com/mildanalyst"
                 style={{ color: `${colors.blueMunsell}` }}
