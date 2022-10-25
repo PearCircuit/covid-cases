@@ -18,7 +18,7 @@ const Navbar = () => {
           {/*LOGO*/}
           <Heading fontSize="2xl">
             <Link href="/" aria-label="Home" my={5} w="100%">
-              <a>MonkeypoxTracker</a>
+              <a>Ebola-Cases.com</a>
             </Link>
           </Heading>
         </Flex>
@@ -31,25 +31,12 @@ const Navbar = () => {
               <Link href="/countries" aria-label="Countries" m={5} w="100%">
                 <a>Global data</a>
               </Link>
-              <Link href="/usstates" aria-label="States" m={5} w="100%">
-                <a>US state data</a>
-              </Link>
-              <Link href="/us/testing" aria-label="Countries" m={5} w="100%">
-                <a>US testing</a>
-              </Link>
+
               <Link href="/about" aria-label="About" m={5} w="100%">
                 <a>About</a>
               </Link>
               <Link href="/faq" aria-label="FAQ" m={5} w="100%">
                 <a>FAQ</a>
-              </Link>
-              <Link
-                href="https://blog.monkeypoxtracker.net"
-                aria-label="Blog"
-                m={5}
-                w="100%"
-              >
-                <a>Blog</a>
               </Link>
             </HStack>
           </Flex>
@@ -103,30 +90,12 @@ const Navbar = () => {
             <Link href="/countries" aria-label="Countries" m={"10px"} w="100%">
               <a onClick={() => changeDisplay("none")}>Global data</a>
             </Link>
-            <Link href="/usstates" aria-label="States" m={"10px"} w="100%">
-              <a onClick={() => changeDisplay("none")}>US state data </a>
-            </Link>
-            <Link
-              href="/us/testing"
-              aria-label="US testing"
-              m={"10px"}
-              w="100%"
-            >
-              <a onClick={() => changeDisplay("none")}>US Testing</a>
-            </Link>
+
             <Link href="/about" aria-label="About" m={"10px"} w="100%">
               <a onClick={() => changeDisplay("none")}>About</a>
             </Link>
             <Link href="/faq" aria-label="FAQ" m={"10px"} w="100%">
               <a onClick={() => changeDisplay("none")}>FAQ</a>
-            </Link>
-            <Link
-              href="https://blog.monkeypoxtracker.net"
-              aria-label="Blog"
-              m={"10px"}
-              w="100%"
-            >
-              <a onClick={() => changeDisplay("none")}>Blog</a>
             </Link>
           </Flex>
         </Flex>

@@ -5,9 +5,7 @@ const Footer = () => {
   return (
     <Container maxW={"5xl"} mb={5} mt={5}>
       <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-        <a href="https://twitter.com/monkeypox_stats">
-          Follow updates on Twitter
-        </a>
+        <a href="https://twitter.com/ebola_cases">Follow updates on Twitter</a>
       </Button>
     </Container>
   );

@@ -23,35 +23,35 @@ export default function FAQ() {
   return (
     <>
       <Head>
-        <title>Monkeypox Tracker | FAQ</title>
+        <title>Ebola Cases | FAQ</title>
         <meta httpEquiv="content-language" content="en-gb" />
 
         <meta
           name="description"
-          content="Frquently asked questions about Monkeypox as a disease, including symptom information, treatment information, vaccination information, and statistics. Inspired by the BNO Monkeypox tracker."
+          content="Frquently asked questions about ebola as a disease, including symptom information, treatment information, vaccination information, and statistics."
         />
 
-        <meta property="og:title" content="Monkeypox Tracker | FAQ" />
+        <meta property="og:title" content="Ebola Tracker | FAQ" />
         <meta
           property="og:description"
-          content="Frquently asked questions about Monkeypox as a disease, including symptom information, treatment information, vaccination information, and statistics. Inspired by the BNO Monkeypox tracker."
+          content="Frquently asked questions about ebola as a disease, including symptom information, treatment information, vaccination information, and statistics."
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com/" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="Frquently asked questions about Monkeypox virus, including symptom information, treatment information, vaccination information, and statistics. Inspired by the BNO Monkeypox tracker."
+          content="Frquently asked questions about ebola virus, including symptom information, treatment information, vaccination information, and statistics."
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />

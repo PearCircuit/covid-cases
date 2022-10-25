@@ -6,35 +6,35 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Monkeypox Tracker | About</title>
+        <title>Ebola Cases | About</title>
         <meta httpEquiv="content-language" content="en-gb" />
 
         <meta
           name="description"
-          content="More info about the MonkeypoxTacker.net website. Inspired by the BNO Monkeypox tracker."
+          content="More info about the ebola-cases.com website."
         />
 
-        <meta property="og:title" content="Monkeypox Tracker | About" />
+        <meta property="og:title" content="Ebola Cases | About" />
         <meta
           property="og:description"
-          content="More info about the MonkeypoxTacker.net website. Inspired by the BNO Monkeypox tracker."
+          content="More info about the ebola-cases.com website."
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="More info about the MonkeypoxTacker.net website. Inspired by the BNO Monkeypox tracker."
+          content="More info about the ebola-cases.com website."
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />

@@ -27,9 +27,6 @@ import DataTable from "./components/WorldTable.js";
 const WorldTrends = dynamic(() => import("./components/WorldTrends.js"), {
   ssr: false,
 });
-const USMapChart = dynamic(() => import("./components/USMap.js"), {
-  ssr: false,
-});
 
 import { useState, useEffect } from "react";
 import { csv } from "csvtojson";
@@ -45,7 +42,7 @@ export default function Home() {
 
   useEffect(() => {
     const url =
-      "https://raw.githubusercontent.com/owid/monkeypox/main/owid-monkeypox-data.csv";
+      "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
 
     const fetchData = async () => {
       try {
@@ -169,13 +166,6 @@ export default function Home() {
             </Text>
           </Box>
           <WorldMapChart setTooltipContent={setContent} />
-          {content && (
-            <ReactTooltip>
-              <Tooltip>{content}</Tooltip>
-            </ReactTooltip>
-          )}
-
-          <USMapChart setTooltipContent={setContent} />
           {content && (
             <ReactTooltip>
               <Tooltip>{content}</Tooltip>

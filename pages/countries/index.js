@@ -66,34 +66,34 @@ const Countries = ({ countryList, countryCaseData }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Worldwide monkeypox cases {currentMonth} {currentYear}
+          Worldwide ebola cases {currentMonth} {currentYear}
         </title>
         <meta
           name="description"
-          content={`${currentMonth} ${currentYear} monkeypox virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
 
-        <meta property="og:title" content="Monkeypox Tracker | Countries" />
+        <meta property="og:title" content="Ebola Cases | Countries" />
         <meta
           property="og:description"
-          content={`${currentMonth} ${currentYear} monkeypox virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com/" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`${currentMonth} ${currentYear} monkeypox virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -102,16 +102,6 @@ const Countries = ({ countryList, countryCaseData }) => {
         <Heading as="h1" mt={5}>
           Monkeypox cases and deaths by country
         </Heading>
-
-        <Link href={"/usstates/"}>
-          <Button
-            size="sm"
-            m={5}
-            style={{ backgroundColor: `${colors.yellowGreen}` }}
-          >
-            View US states
-          </Button>
-        </Link>
 
         <Container maxW={"5xl"} mt={5}>
           <WorldMap setTooltipContent={setContent} />

@@ -78,7 +78,7 @@ export const getStaticProps = async (context) => {
   const countryDetails = await JSON.parse(countryDetailsText);
 
   const countryDataUrl =
-    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/5df654ffaad55ef0850a7426c9e9faede0b3c16b/ebola-case-data.csv";
+    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
 
   const res = await fetch(countryDataUrl);
   const text = await res.text();
@@ -314,38 +314,38 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Monkeypox in {countryName} as of {currentMonth} {currentYear} |
-          Monkeypox Cases
+          Ebola in {countryName} as of {currentMonth} {currentYear} | Ebola
+          Cases
         </title>
         <meta
           name="description"
-          content={`Charting the ${countryName} monkeypox outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
 
         <meta
           property="og:title"
-          content={`Monkeypox in ${countryName} as of ${currentMonth} ${currentYear} | Monkeypox Tracker - Monkeypox Statistics`}
+          content={`Ebola in ${countryName} as of ${currentMonth} ${currentYear} | Ebola Cases - Ebola Deaths`}
         />
         <meta
           property="og:description"
-          content={`Charting the ${countryName} monkeypox outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com/" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`Charting the ${countryName} monkeypox outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />

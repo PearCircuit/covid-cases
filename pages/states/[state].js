@@ -320,38 +320,38 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Monkeypox in {stateName}, {countryName} as of {currentMonth}{" "}
-          {currentYear} | Monkeypox Cases
+          Ebola in {stateName}, {countryName} as of {currentMonth} {currentYear}{" "}
+          | Ebola Cases
         </title>
         <meta
           name="description"
-          content={`Charting the ${stateName}, ${countryName} monkeypox outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
 
         <meta
           property="og:title"
-          content={`Monkeypox in ${stateName}, ${countryName} as of ${currentMonth} ${currentYear} | Monkeypox Tracker - Monkeypox Statistics`}
+          content={`Ebola in ${stateName}, ${countryName} as of ${currentMonth} ${currentYear} | Ebola Cases - Ebola Deaths`}
         />
         <meta
           property="og:description"
-          content={`Charting the ${stateName}, ${countryName} monkeypox outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
 
-        <meta property="og:url" content="https://monkeypoxtracker.net/" />
+        <meta property="og:url" content="https://ebola-cases.com/" />
         <meta
           property="og:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`Charting the ${stateName}, ${countryName} monkeypox outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
         <meta
           property="twitter:image"
-          content="https://monkeypoxtracker.net/socialImg.png"
+          content="https://ebola-cases.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
