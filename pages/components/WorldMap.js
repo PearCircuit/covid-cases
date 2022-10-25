@@ -24,7 +24,7 @@ const WorldMapChart = ({ setTooltipContent }) => {
     const fetchData = async () => {
       try {
         const countryCasesUrl =
-          "https://raw.githubusercontent.com/owid/monkeypox/main/owid-monkeypox-data.csv";
+          "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/5df654ffaad55ef0850a7426c9e9faede0b3c16b/ebola-case-data.csv";
         const countryCasesRes = await fetch(countryCasesUrl);
         const countryCasesText = await countryCasesRes.text();
         const countriesCases = await csv().fromString(countryCasesText);

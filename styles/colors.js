@@ -1,8 +1,8 @@
 export const colors = {
-  yellowGreen: "#BCE784",
-  yellowGreenPale: "#eaf5dc",
-  aquamarine: "#5DD39E",
-  blueMunsell: "#348AA7",
-  spaceCadet: "#111D4A",
-  kineticBlack: "#1C0F13",
+  yellowGreen: "#E36414",
+  yellowGreenPale: "#E6B597",
+  aquamarine: "#FB8B24",
+  blueMunsell: "#9A031E",
+  spaceCadet: "#5F0F40",
+  kineticBlack: "#0F4C5C",
 };
