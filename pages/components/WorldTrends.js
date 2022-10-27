@@ -8,7 +8,7 @@ import { csv } from "csvtojson";
 
 export default function WorldTrends() {
   const [data, setData] = useState([]);
-  const [filterLocation, setFilterLocation] = useState("World");
+  const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
 
   useEffect(() => {
     const url =
@@ -196,7 +196,9 @@ export default function WorldTrends() {
     <>
       <Box mt={2} mb={20}>
         <Select onChange={(e) => setFilterLocation(e.target.value)}>
+          {/* 
           <option defaultValue={"World"}>World</option>
+          */}
           {uniqueLocationOptions &&
             uniqueLocationOptions.map((location) => (
               <option value={location} key={location}>

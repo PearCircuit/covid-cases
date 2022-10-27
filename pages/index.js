@@ -50,13 +50,14 @@ export default function Home() {
         const text = await res.text();
         const jsonArray = await csv().fromString(text);
         setData(jsonArray);
-        const worldCaseData = jsonArray.filter((location) =>
-          location.location.includes("World")
-        );
+
         setLatestCaseTotal(
-          ~~worldCaseData[worldCaseData.length - 1].total_cases
+          jsonArray.reduce(
+            (total, current) => Number(total) + Number(current.new_cases),
+            0
+          ) - Number(jsonArray[jsonArray.length - 1].new_cases)
         );
-        console.log("ok");
+        console.log(latestCaseTotal);
       } catch (error) {
         console.log("err", error);
       }
@@ -119,6 +120,13 @@ export default function Home() {
               </Text>{" "}
               Ebola cases detected
             </Heading>
+            <Text maxW={"5xl"}>
+              This project is a collaboration with{" "}
+              <Link href="https://bnonews.com/">
+                <a style={{ color: `${colors.blueMunsell}` }}>BNO News</a>
+              </Link>
+              .
+            </Text>
             <Text maxW={"5xl"}>
               This site is dedicated to tracking the spread of the 2022 Ebola
               virus disease outbreak, and is updated every few hours. You can{" "}
