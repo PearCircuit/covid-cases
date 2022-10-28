@@ -55,7 +55,7 @@ export default function Home() {
           jsonArray.reduce(
             (total, current) => Number(total) + Number(current.new_cases),
             0
-          ) - Number(jsonArray[jsonArray.length - 1].new_cases)
+          )
         );
         console.log(latestCaseTotal);
       } catch (error) {
