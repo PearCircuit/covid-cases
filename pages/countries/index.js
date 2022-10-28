@@ -41,7 +41,7 @@ export const getStaticProps = async () => {
   const countries = await JSON.parse(countrySummaryText);
 
   const countryCasesUrl =
-    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/5df654ffaad55ef0850a7426c9e9faede0b3c16b/ebola-case-data.csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
 
   const countryCasesRes = await fetch(countryCasesUrl);
   const countryCasesText = await countryCasesRes.text();

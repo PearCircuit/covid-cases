@@ -83,7 +83,7 @@ export const getStaticProps = async (context) => {
   const countryDetails = await JSON.parse(countryDetailsText);
 
   const countryDataUrl =
-    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
   const res = await fetch(countryDataUrl);
   const text = await res.text();
   const jsonArray = await csv().fromString(text);
