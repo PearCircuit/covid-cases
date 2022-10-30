@@ -6,7 +6,7 @@ import { colors } from "../../styles/colors.js";
 
 import { csv } from "csvtojson";
 
-export default function WorldTrends() {
+export default function WorldTrends_Cases() {
   const [data, setData] = useState([]);
   const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
 
@@ -212,8 +212,11 @@ export default function WorldTrends() {
         </div>
 
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
-          Last update: {Date().toLocaleString().substring(0, 16)}
+          Source:{" "}
+          <a href={"https://www.health.go.ug/ebola/"}>
+            Ugandan Ministry of Health
+          </a>
+          . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Box>
     </>

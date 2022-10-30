@@ -148,6 +148,21 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
     )
   );
 
+  const filteredTotalHospitalized = JSON.parse(
+    JSON.stringify(
+      countryCaseData.map((y) => {
+        return y["total_hospitalized"];
+      })
+    )
+  );
+  const filteredTotalIcu = JSON.parse(
+    JSON.stringify(
+      countryCaseData.map((y) => {
+        return y["total_icu"];
+      })
+    )
+  );
+
   const chartDataTotalCases = {
     labels: filteredDates,
     datasets: [
@@ -266,6 +281,53 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         pointRadius: 1,
         pointHitRadius: 10,
         data: filteredTotalDeaths,
+      },
+    ],
+  };
+  const chartDataHospitalizations = {
+    labels: filteredDates,
+    datasets: [
+      {
+        label: "Total in Hospital",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: colors.spaceCadet,
+        borderColor: colors.spaceCadet,
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: colors.spaceCadet,
+        pointBackgroundColor: colors.spaceCadet,
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: colors.spaceCadet,
+        pointHoverBorderColor: colors.spaceCadet,
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: filteredTotalHospitalized,
+      },
+      {
+        label: "Total in ICU",
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: colors.aquamarine,
+        borderColor: colors.aquamarine,
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: colors.aquamarine,
+        pointBackgroundColor: colors.aquamarine,
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: colors.aquamarine,
+        pointHoverBorderColor: colors.aquamarine,
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: filteredTotalIcu,
       },
     ],
   };
@@ -501,10 +563,28 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
               )}
             </div>
           </GridItem>
+          <GridItem w="100%" mt={10}>
+            <Heading as="h3" size="sm">
+              <Center mb={1}>{countryName}: Ebola Hospitalizations</Center>
+            </Heading>
+            <div style={{ minHeight: "40vh" }}>
+              {countryCaseData[0] ? (
+                <Line
+                  data={chartDataHospitalizations}
+                  options={{ maintainAspectRatio: false }}
+                />
+              ) : (
+                <Center>No cases detected yet.</Center>
+              )}
+            </div>
+          </GridItem>
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
-          Last update: {Date().toLocaleString().substring(0, 16)}
+          Source:{" "}
+          <a href={"https://www.health.go.ug/ebola/"}>
+            Ugandan Ministry of Health
+          </a>
+          . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
         <Heading mt={5} mb={5} as="h2" size="sm">
           View {countryName} outbreak by subregion

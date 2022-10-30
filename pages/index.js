@@ -24,9 +24,18 @@ const WorldMapChart = dynamic(() => import("./components/WorldMap.js"), {
   ssr: false,
 });
 import DataTable from "./components/WorldTable.js";
-const WorldTrends = dynamic(() => import("./components/WorldTrends.js"), {
-  ssr: false,
-});
+const WorldTrends_Cases = dynamic(
+  () => import("./components/WorldTrends_Cases.js"),
+  {
+    ssr: false,
+  }
+);
+const WorldTrends_Hospitalizations = dynamic(
+  () => import("./components/WorldTrends_Hospitalizations.js"),
+  {
+    ssr: false,
+  }
+);
 
 import { useState, useEffect } from "react";
 import { csv } from "csvtojson";
@@ -154,10 +163,17 @@ export default function Home() {
 
           <Box textAlign={"center"}>
             <Heading as="h2" size="lg" mb={5} mt={"50px"}>
-              Global Ebola virus spread over time
+              Ebola virus cases
             </Heading>
           </Box>
-          <WorldTrends />
+          <WorldTrends_Cases />
+
+          <Box textAlign={"center"}>
+            <Heading as="h2" size="lg" mb={5} mt={"50px"}>
+              Ebola virus hospitalizations
+            </Heading>
+          </Box>
+          <WorldTrends_Hospitalizations />
 
           <Box textAlign={"center"}>
             <Heading as="h2" size="lg" mt={"50px"}>
