@@ -136,12 +136,12 @@ export default function Home() {
                 </a>
               </Link>{" "}
               for a more detailed breakdown. Follow us on twitter for more
-              updates, or follow our partner{" "}
+              updates, or follow{" "}
               <a
-                href="https://twitter.com/mildanalyst"
+                href="https://twitter.com/BNOFeed"
                 style={{ color: `${colors.blueMunsell}` }}
               >
-                Pandemic News
+                BNO News
               </a>{" "}
               for details about other health crises around the world.
             </Text>

@@ -146,6 +146,33 @@ export default function DataTable() {
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
+              <Th onClick={() => sorting("new_hospitalized", "float")}>
+                New Hospitalized
+                {order === "ASC" && sortedCol === "new_hospitalized" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_hospitalized" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+              <Th onClick={() => sorting("total_icu", "float")}>
+                In ICU
+                {order === "ASC" && sortedCol === "total_icu" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "total_icu" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+              <Th onClick={() => sorting("new_icu", "float")}>
+                New ICU
+                {order === "ASC" && sortedCol === "new_icu" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_icu" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
               <Th onClick={() => sorting("new_deaths", "float")}>
                 New Deaths
                 {order === "ASC" && sortedCol === "new_deaths" && (
@@ -213,6 +240,9 @@ export default function DataTable() {
                   new_cases,
                   total_cases,
                   total_hospitalized,
+                  new_hospitalized,
+                  total_icu,
+                  new_icu,
                   new_deaths,
                   total_deaths,
                   total_recovered,
@@ -234,6 +264,9 @@ export default function DataTable() {
                     <Td>{parseInt(new_cases).toLocaleString()}</Td>
                     <Td>{parseInt(total_cases).toLocaleString()}</Td>
                     <Td>{parseInt(total_hospitalized).toLocaleString()}</Td>
+                    <Td>{parseInt(new_hospitalized).toLocaleString()}</Td>
+                    <Td>{parseInt(total_icu).toLocaleString()}</Td>
+                    <Td>{parseInt(new_icu).toLocaleString()}</Td>
 
                     <Td>{parseInt(new_deaths).toLocaleString()}</Td>
                     <Td>{parseInt(total_deaths).toLocaleString()}</Td>
@@ -251,7 +284,7 @@ export default function DataTable() {
       <Text>
         <br />
         NOTE: Figures include probable cases and deaths which occurred in the
-        weeks before the outbreak was declared. Probable cases totaling 20
+        weeks before the outbreak was declared. Probable cases totaling 21
         individuals are no longer updated and may not always be included in
         tallies published by other sources.
       </Text>{" "}
