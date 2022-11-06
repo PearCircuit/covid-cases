@@ -157,7 +157,7 @@ export default function Home() {
             </Heading>
 
             <Text maxW={"5xl"}>
-              We've partnered with BNO News to bring you live updates on the
+              We have partnered with BNO News to bring you live updates on the
               2022 Ebola virus disease outbreak. You can follow us on twitter
               for more updates, or follow{" "}
               <a
