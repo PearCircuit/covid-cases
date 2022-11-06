@@ -6,7 +6,7 @@ import { colors } from "../../styles/colors.js";
 
 import { csv } from "csvtojson";
 
-export default function WorldTrends_Hospitalizations() {
+export default function WorldTrends_Recoveries() {
   const [data, setData] = useState([]);
   const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
 
@@ -43,39 +43,10 @@ export default function WorldTrends_Hospitalizations() {
       })
     )
   );
-  const filteredTotalHospitalized = JSON.parse(
+  const filteredTotalRecovered = JSON.parse(
     JSON.stringify(
       filter.map((y) => {
-        return Math.max(y["total_hospitalized"]);
-      })
-    )
-  );
-  const filteredNewHospitalized = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["new_hospitalized"];
-      })
-    )
-  );
-  const filteredTotalIcu = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["total_icu"];
-      })
-    )
-  );
-  const filteredNewIcu = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["new_icu"];
-      })
-    )
-  );
-
-  const filteredTotalDeaths = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["total_deaths"];
+        return Math.max(y["total_recovered"]);
       })
     )
   );
@@ -84,7 +55,7 @@ export default function WorldTrends_Hospitalizations() {
     labels: filteredDates,
     datasets: [
       {
-        label: "Total In Hospital",
+        label: "Recovered",
         fill: false,
         lineTension: 0.1,
         backgroundColor: colors.tyrianPurple,
@@ -102,29 +73,7 @@ export default function WorldTrends_Hospitalizations() {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: filteredTotalHospitalized,
-      },
-
-      {
-        label: "Total in ICU",
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredTotalIcu,
+        data: filteredTotalRecovered,
       },
     ],
   };

@@ -11,14 +11,15 @@ import {
   Box,
   Text,
 } from "@chakra-ui/react";
-import { TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
+
 const getCountryISO2 = require("country-iso-3-to-2");
+
 import { colors } from "../../styles/colors";
-import { GrAscend, GrDescend, GrUnsorted } from "react-icons/gr";
+import { GrAscend, GrDescend } from "react-icons/gr";
 
 import { csv } from "csvtojson";
 
-export default function DataTable() {
+export default function WorldTable_FullHistory() {
   const [data, setData] = useState([]);
   const [didLoad, setDidLoad] = useState(false);
   const [order, setOrder] = useState("DSC");
@@ -37,7 +38,7 @@ export default function DataTable() {
         );
 
         const unique = sortedArray
-          .map((e) => e["iso_code"])
+          .map((e) => e["date"])
 
           // store the keys of the unique objects
           .map((e, i, final) => final.indexOf(e) === i && i)
@@ -110,6 +111,15 @@ export default function DataTable() {
         <Table size="sm">
           <Thead position="sticky" top={0} bgColor="white">
             <Tr>
+              <Th onClick={() => sorting("date", "string")}>
+                Date
+                {order === "ASC" && sortedCol === "date" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "date" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
               <Th onClick={() => sorting("location", "string")}>
                 Country{" "}
                 {order === "ASC" && sortedCol === "location" && (
@@ -119,21 +129,22 @@ export default function DataTable() {
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
-              <Th onClick={() => sorting("new_cases", "float")}>
-                New Cases
-                {order === "ASC" && sortedCol === "new_cases" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "new_cases" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
+
               <Th onClick={() => sorting("total_cases", "float")}>
                 Total Cases
                 {order === "ASC" && sortedCol === "total_cases" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
                 {order === "DSC" && sortedCol === "total_cases" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+              <Th onClick={() => sorting("new_cases", "float")}>
+                New Cases
+                {order === "ASC" && sortedCol === "new_cases" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_cases" && (
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
@@ -173,15 +184,6 @@ export default function DataTable() {
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
-              <Th onClick={() => sorting("new_deaths", "float")}>
-                New Deaths
-                {order === "ASC" && sortedCol === "new_deaths" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "new_deaths" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
               <Th onClick={() => sorting("total_deaths", "float")}>
                 Total deaths
                 {order === "ASC" && sortedCol === "total_deaths" && (
@@ -191,40 +193,22 @@ export default function DataTable() {
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
+              <Th onClick={() => sorting("new_deaths", "float")}>
+                New Deaths
+                {order === "ASC" && sortedCol === "new_deaths" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_deaths" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
               <Th onClick={() => sorting("total_recovered", "float")}>
                 Recovered
                 {order === "ASC" && sortedCol === "total_recovered" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
                 {order === "DSC" && sortedCol === "total_recovered" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-              <Th onClick={() => sorting("new_cases_per_million", "float")}>
-                New Cases/Mil
-                {order === "ASC" && sortedCol === "new_cases_per_million" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "new_cases_per_million" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-              <Th onClick={() => sorting("total_cases_per_million", "float")}>
-                Total Cases/Mil
-                {order === "ASC" && sortedCol === "total_cases_per_million" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "total_cases_per_million" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-
-              <Th onClick={() => sorting("date", "string")}>
-                Updated
-                {order === "ASC" && sortedCol === "date" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "date" && (
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
@@ -246,10 +230,9 @@ export default function DataTable() {
                   new_deaths,
                   total_deaths,
                   total_recovered,
-                  new_cases_per_million,
-                  total_cases_per_million,
                 }) => (
-                  <Tr key={location}>
+                  <Tr key={date}>
+                    <Td>{date}</Td>
                     <Td>
                       <a
                         href={`/countries/${getCountryISO2(iso_code)}`}
@@ -261,20 +244,15 @@ export default function DataTable() {
                         {location}
                       </a>
                     </Td>
-                    <Td>{parseInt(new_cases).toLocaleString()}</Td>
                     <Td>{parseInt(total_cases).toLocaleString()}</Td>
+                    <Td>{parseInt(new_cases).toLocaleString()}</Td>
                     <Td>{parseInt(total_hospitalized).toLocaleString()}</Td>
                     <Td>{parseInt(new_hospitalized).toLocaleString()}</Td>
                     <Td>{parseInt(total_icu).toLocaleString()}</Td>
                     <Td>{parseInt(new_icu).toLocaleString()}</Td>
-
-                    <Td>{parseInt(new_deaths).toLocaleString()}</Td>
                     <Td>{parseInt(total_deaths).toLocaleString()}</Td>
+                    <Td>{parseInt(new_deaths).toLocaleString()}</Td>
                     <Td>{parseInt(total_recovered).toLocaleString()}</Td>
-
-                    <Td>{parseFloat(new_cases_per_million)}</Td>
-                    <Td>{parseFloat(total_cases_per_million)}</Td>
-                    <Td>{date}</Td>
                   </Tr>
                 )
               )}

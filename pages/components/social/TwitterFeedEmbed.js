@@ -15,22 +15,22 @@ import { Box, Center } from "@chakra-ui/react";
 
 import { colors } from "../../../styles/colors";
 
-const TwitterButton = () => {
+const TwitterFeedEmbed = () => {
   return (
     <>
-      <div className="centerContent">
-        <div className="selfCenter spaceBetween">
-          <TwitterFollowButton
-            onLoad={function noRefCheck() {}}
-            options={{
-              size: "large",
-            }}
-            screenName="ebola_cases"
-          />
-        </div>
-      </div>
+      <Box Center>
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          onLoad={function noRefCheck() {}}
+          screenName="ebola_cases"
+          linkColor="#9A031E"
+          options={{
+            height: 900,
+          }}
+        />
+      </Box>
     </>
   );
 };
 
-export default TwitterButton;
+export default TwitterFeedEmbed;

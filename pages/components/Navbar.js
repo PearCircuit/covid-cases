@@ -16,21 +16,21 @@ const Navbar = () => {
   return (
     <nav>
       <Flex
-        p={5}
-        borderBottom={1}
+        p={3}
+        //borderBottom={1}
         borderStyle={"solid"}
         borderColor={"gray.200"}
       >
         <Flex top="1rem" right="1rem" align="center">
           {/*LOGO*/}
 
-          <Link href="/" aria-label="Home" my={5} w="100%">
+          <Link href="/" aria-label="Home" my={2} w="100%">
             <a>
-              <Heading fontSize="2xl">
+              <Heading fontSize="1xl">
                 <div>
                   Ebola-Cases.com +{" "}
                   <Image
-                    boxSize="50px"
+                    boxSize="40px"
                     objectFit="cover"
                     src="https://pbs.twimg.com/profile_images/1547415204975329280/6FTHmlEC_400x400.png"
                     display="inline"

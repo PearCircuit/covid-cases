@@ -14,24 +14,55 @@ import {
   HStack,
   Show,
   Button,
+  GridItem,
+  SimpleGrid,
 } from "@chakra-ui/react";
+
+import TwitterFeedEmbed from "./components/social/TwitterFeedEmbed.js";
 import TwitterButton from "./components/social/TwitterButton.js";
 
-import Link from "next/link";
 import { colors } from "../styles/colors.js";
 
 const WorldMapChart = dynamic(() => import("./components/WorldMap.js"), {
   ssr: false,
 });
-import DataTable from "./components/WorldTable.js";
-const WorldTrends_Cases = dynamic(
-  () => import("./components/WorldTrends_Cases.js"),
+import WorldTable_FullHistory from "./components/WorldTable_FullHistory.js";
+
+const WorldTrends_TotalCases = dynamic(
+  () => import("./components/WorldTrends_TotalCases.js"),
   {
     ssr: false,
   }
 );
+
+const WorldTrends_NewCases = dynamic(
+  () => import("./components/WorldTrends_NewCases.js"),
+  {
+    ssr: false,
+  }
+);
+
 const WorldTrends_Hospitalizations = dynamic(
   () => import("./components/WorldTrends_Hospitalizations.js"),
+  {
+    ssr: false,
+  }
+);
+const WorldTrends_Recoveries = dynamic(
+  () => import("./components/WorldTrends_Recoveries.js"),
+  {
+    ssr: false,
+  }
+);
+
+const WorldTrends_Deaths = dynamic(
+  () => import("./components/WorldTrends_Deaths.js"),
+  {
+    ssr: false,
+  }
+);
+const WorldTrends_CFR = dynamic(
+  () => import("./components/WorldTrends_CFR.js"),
   {
     ssr: false,
   }
@@ -114,89 +145,116 @@ export default function Home() {
       </Head>
 
       <main>
-        <Container maxW={"5xl"}>
+        <Container maxW={"8xl"}>
           <Stack
             textAlign={"center"}
             align={"center"}
-            spacing={{ base: 5, md: 10 }}
-            py={{ base: 10, md: 20 }}
+            spacing={{ base: 5, md: 5 }}
+            py={{ base: 10, md: 10 }}
           >
-            <Heading as="h1" size="3xl">
-              <Text as={"span"}>
-                {latestCaseTotal.toLocaleString(undefined, {
-                  maximumFractionDigits: 2,
-                })}
-              </Text>{" "}
-              Ebola cases detected
+            <Heading as="h1" size="2xl">
+              Your realtime dashboard for the 2022 Ebola outbreak
             </Heading>
+
             <Text maxW={"5xl"}>
-              This project is a collaboration with{" "}
-              <Link href="https://bnonews.com/">
-                <a style={{ color: `${colors.blueMunsell}` }}>BNO News</a>
-              </Link>
-              .
-            </Text>
-            <Text maxW={"5xl"}>
-              This site is dedicated to tracking the spread of the 2022 Ebola
-              virus disease outbreak, and is updated every few hours. You can{" "}
-              <Link href="/countries">
-                <a style={{ color: `${colors.blueMunsell}` }}>
-                  view the countries listing page
-                </a>
-              </Link>{" "}
-              for a more detailed breakdown. Follow us on twitter for more
-              updates, or follow{" "}
+              We've partnered with BNO News to bring you live updates on the
+              2022 Ebola virus disease outbreak. You can follow us on twitter
+              for more updates, or follow{" "}
               <a
                 href="https://twitter.com/BNOFeed"
-                style={{ color: `${colors.blueMunsell}` }}
+                style={{ color: `${colors.rubyRed}` }}
               >
                 BNO News
               </a>{" "}
               for details about other health crises around the world.
             </Text>
 
-            <TwitterButton style={{ margin: "!important;" }} />
+            <TwitterButton />
           </Stack>
         </Container>
-        <Container maxW={"5xl"}>
-          <DataTable />
 
-          <Box textAlign={"center"}>
-            <Heading as="h2" size="lg" mb={5} mt={"50px"}>
-              Ebola virus cases
-            </Heading>
-          </Box>
-          <WorldTrends_Cases />
+        <Container maxW="8xl" mt="1vh">
+          <SimpleGrid
+            columns={[1, null, 3]}
+            minChildWidth="350px"
+            spacingX="10px"
+            spacingY="0px"
+          >
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Deaths
+                </Heading>
+                <WorldTrends_Deaths />
+              </Box>
+            </GridItem>
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Cases
+                </Heading>
+                <WorldTrends_TotalCases />
+              </Box>
+            </GridItem>
 
-          <Box textAlign={"center"}>
-            <Heading as="h2" size="lg" mb={5} mt={"50px"}>
-              Ebola virus hospitalizations
-            </Heading>
-          </Box>
-          <WorldTrends_Hospitalizations />
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  New Cases
+                </Heading>
+                <WorldTrends_NewCases />
+              </Box>
+            </GridItem>
 
-          <Box textAlign={"center"}>
-            <Heading as="h2" size="lg" mt={"50px"}>
-              Global confirmed Ebola cases
-            </Heading>
-            <Text size="md" mb={5}>
-              Click on a country to view more details
-            </Text>
-          </Box>
-          <WorldMapChart setTooltipContent={setContent} />
-          {content && (
-            <ReactTooltip>
-              <Tooltip>{content}</Tooltip>
-            </ReactTooltip>
-          )}
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Hospitalizations
+                </Heading>
+              </Box>
+              <WorldTrends_Hospitalizations />
+            </GridItem>
+
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Recoveries
+                </Heading>
+              </Box>
+              <WorldTrends_Recoveries />
+            </GridItem>
+
+            <GridItem>
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Case Fatality Rate
+                </Heading>
+              </Box>
+              <WorldTrends_CFR />
+            </GridItem>
+          </SimpleGrid>
         </Container>
 
-        <Container>
-          <Text mt={12} mb={12}>
-            Want to raise awareness? You can share this site on social media.{" "}
-            <br /> <br />
-            Check back for daily updates.
-          </Text>
+        <Container maxW={"8xl"} mt="5vh">
+          <Box textAlign={"center"}>
+            <Heading as="h2" size="md" mb={5}>
+              Global confirmed Ebola cases
+            </Heading>
+            <WorldTable_FullHistory />
+            <Text mb={5} color={"gray.500"}>
+              Source:{" "}
+              <a href={"https://www.health.go.ug/ebola/"}>
+                Ugandan Ministry of Health
+              </a>
+              . Last update: {Date().toLocaleString().substring(0, 16)}
+            </Text>
+          </Box>
+        </Container>
+
+        <Container maxW={"2xl"} mt="5vh">
+          <Box textAlign={"center"}>
+            <TwitterFeedEmbed />
+          </Box>
         </Container>
       </main>
     </>

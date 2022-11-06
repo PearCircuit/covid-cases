@@ -1,12 +1,10 @@
 import { Container, Button } from "@chakra-ui/react";
-import { FaTwitter } from "react-icons/fa";
+import TwitterButton from "./social/TwitterButton.js";
 
 const Footer = () => {
   return (
-    <Container maxW={"5xl"} mb={5} mt={5}>
-      <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-        <a href="https://twitter.com/ebola_cases">Follow updates on Twitter</a>
-      </Button>
+    <Container maxW={"5xl"} mb={5} mt={5} ml={5} mr={5}>
+      <TwitterButton />
     </Container>
   );
 };

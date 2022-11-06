@@ -6,7 +6,7 @@ import { colors } from "../../styles/colors.js";
 
 import { csv } from "csvtojson";
 
-export default function WorldTrends_Hospitalizations() {
+export default function WorldTrends_Deaths() {
   const [data, setData] = useState([]);
   const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
 
@@ -43,34 +43,6 @@ export default function WorldTrends_Hospitalizations() {
       })
     )
   );
-  const filteredTotalHospitalized = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return Math.max(y["total_hospitalized"]);
-      })
-    )
-  );
-  const filteredNewHospitalized = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["new_hospitalized"];
-      })
-    )
-  );
-  const filteredTotalIcu = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["total_icu"];
-      })
-    )
-  );
-  const filteredNewIcu = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["new_icu"];
-      })
-    )
-  );
 
   const filteredTotalDeaths = JSON.parse(
     JSON.stringify(
@@ -84,47 +56,25 @@ export default function WorldTrends_Hospitalizations() {
     labels: filteredDates,
     datasets: [
       {
-        label: "Total In Hospital",
+        label: "Total Deaths",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: colors.tyrianPurple,
-        borderColor: colors.tyrianPurple,
+        backgroundColor: colors.kineticBlack,
+        borderColor: colors.kineticBlack,
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: colors.tyrianPurple,
-        pointBackgroundColor: colors.tyrianPurple,
+        pointBorderColor: colors.kineticBlack,
+        pointBackgroundColor: colors.kineticBlack,
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.tyrianPurple,
-        pointHoverBorderColor: colors.tyrianPurple,
+        pointHoverBackgroundColor: colors.kineticBlack,
+        pointHoverBorderColor: colors.kineticBlack,
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
         pointHitRadius: 10,
-        data: filteredTotalHospitalized,
-      },
-
-      {
-        label: "Total in ICU",
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredTotalIcu,
+        data: filteredTotalDeaths,
+        pointRadius: 0,
       },
     ],
   };
