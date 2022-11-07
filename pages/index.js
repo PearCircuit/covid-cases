@@ -235,6 +235,12 @@ export default function Home() {
           </SimpleGrid>
         </Container>
 
+        <Container maxW={"2xl"} mt="5vh">
+          <Box textAlign={"center"}>
+            <TwitterFeedEmbed />
+          </Box>
+        </Container>
+
         <Container maxW={"8xl"} mt="5vh">
           <Box textAlign={"center"}>
             <Heading as="h2" size="md" mb={5}>
@@ -248,12 +254,6 @@ export default function Home() {
               </a>
               . Last update: {Date().toLocaleString().substring(0, 16)}
             </Text>
-          </Box>
-        </Container>
-
-        <Container maxW={"2xl"} mt="5vh">
-          <Box textAlign={"center"}>
-            <TwitterFeedEmbed />
           </Box>
         </Container>
       </main>
