@@ -180,7 +180,7 @@ export default function Home() {
             spacingX="10px"
             spacingY="30px"
           >
-            <a href="/world-trend-details/deaths-detail">
+            <Link href="/world-trend-details/deaths-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -189,9 +189,9 @@ export default function Home() {
                   <WorldTrends_Deaths />
                 </Box>
               </GridItem>
-            </a>
+            </Link>
 
-            <a href="/world-trend-details/total-cases-detail">
+            <Link href="/world-trend-details/total-cases-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -200,9 +200,9 @@ export default function Home() {
                   <WorldTrends_TotalCases />
                 </Box>
               </GridItem>
-            </a>
+            </Link>
 
-            <a href="/world-trend-details/new-cases-detail">
+            <Link href="/world-trend-details/new-cases-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -211,9 +211,9 @@ export default function Home() {
                   <WorldTrends_NewCases />
                 </Box>
               </GridItem>
-            </a>
+            </Link>
 
-            <a href="/world-trend-details/hospitalizations-detail">
+            <Link href="/world-trend-details/hospitalizations-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -222,9 +222,9 @@ export default function Home() {
                 </Box>
                 <WorldTrends_Hospitalizations />
               </GridItem>
-            </a>
+            </Link>
 
-            <a href="/world-trend-details/recoveries-detail">
+            <Link href="/world-trend-details/recoveries-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -233,9 +233,9 @@ export default function Home() {
                 </Box>
                 <WorldTrends_Recoveries />
               </GridItem>
-            </a>
+            </Link>
 
-            <a href="/world-trend-details/cfr-detail">
+            <Link href="/world-trend-details/cfr-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
@@ -244,7 +244,7 @@ export default function Home() {
                 </Box>
                 <WorldTrends_CFR />
               </GridItem>
-            </a>
+            </Link>
           </SimpleGrid>
         </Container>
 
