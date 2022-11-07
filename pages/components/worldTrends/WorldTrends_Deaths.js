@@ -2,11 +2,11 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Select, Box, Text } from "@chakra-ui/react";
-import { colors } from "../../styles/colors.js";
+import { colors } from "../../../styles/colors.js";
 
 import { csv } from "csvtojson";
 
-export default function WorldTrends_CFR() {
+export default function WorldTrends_Deaths() {
   const [data, setData] = useState([]);
   const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
 
@@ -44,10 +44,10 @@ export default function WorldTrends_CFR() {
     )
   );
 
-  const filteredCFR = JSON.parse(
+  const filteredTotalDeaths = JSON.parse(
     JSON.stringify(
       filter.map((y) => {
-        return y["fatality_rate"];
+        return y["total_deaths"];
       })
     )
   );
@@ -56,25 +56,25 @@ export default function WorldTrends_CFR() {
     labels: filteredDates,
     datasets: [
       {
-        label: "CFR",
+        label: "Total Deaths",
         fill: false,
         lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
+        backgroundColor: colors.kineticBlack,
+        borderColor: colors.kineticBlack,
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
+        pointBorderColor: colors.kineticBlack,
+        pointBackgroundColor: colors.kineticBlack,
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
+        pointHoverBackgroundColor: colors.kineticBlack,
+        pointHoverBorderColor: colors.kineticBlack,
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
         pointHitRadius: 10,
-        data: filteredCFR,
+        data: filteredTotalDeaths,
+        pointRadius: 0,
       },
     ],
   };
@@ -84,17 +84,17 @@ export default function WorldTrends_CFR() {
       <Box mt={2} mb={2}>
         {/* 
         <Select onChange={(e) => setFilterLocation(e.target.value)}>
-      
+  
           <option defaultValue={"World"}>World</option>
-      
+    
           {uniqueLocationOptions &&
             uniqueLocationOptions.map((location) => (
               <option value={location} key={location}>
                 {location}
               </option>
             ))}
-        </Select>
-    */}
+        </Select>      */}
+
         <div style={{ minHeight: "35vh" }}>
           <Line data={chartData} options={{ maintainAspectRatio: false }} />
         </div>

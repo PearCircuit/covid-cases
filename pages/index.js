@@ -29,40 +29,40 @@ const WorldMapChart = dynamic(() => import("./components/WorldMap.js"), {
 import WorldTable_FullHistory from "./components/WorldTable_FullHistory.js";
 
 const WorldTrends_TotalCases = dynamic(
-  () => import("./components/WorldTrends_TotalCases.js"),
+  () => import("./components/worldTrends/WorldTrends_TotalCases.js"),
   {
     ssr: false,
   }
 );
 
 const WorldTrends_NewCases = dynamic(
-  () => import("./components/WorldTrends_NewCases.js"),
+  () => import("./components/worldTrends/WorldTrends_NewCases.js"),
   {
     ssr: false,
   }
 );
 
 const WorldTrends_Hospitalizations = dynamic(
-  () => import("./components/WorldTrends_Hospitalizations.js"),
+  () => import("./components/worldTrends/WorldTrends_Hospitalizations.js"),
   {
     ssr: false,
   }
 );
 const WorldTrends_Recoveries = dynamic(
-  () => import("./components/WorldTrends_Recoveries.js"),
+  () => import("./components/worldTrends/WorldTrends_Recoveries.js"),
   {
     ssr: false,
   }
 );
 
 const WorldTrends_Deaths = dynamic(
-  () => import("./components/WorldTrends_Deaths.js"),
+  () => import("./components/worldTrends/WorldTrends_Deaths.js"),
   {
     ssr: false,
   }
 );
 const WorldTrends_CFR = dynamic(
-  () => import("./components/WorldTrends_CFR.js"),
+  () => import("./components/worldTrends/WorldTrends_CFR.js"),
   {
     ssr: false,
   }
@@ -178,60 +178,73 @@ export default function Home() {
             columns={[1, null, 3]}
             minChildWidth="350px"
             spacingX="10px"
-            spacingY="0px"
+            spacingY="30px"
           >
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  Deaths
-                </Heading>
-                <WorldTrends_Deaths />
-              </Box>
-            </GridItem>
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  Cases
-                </Heading>
-                <WorldTrends_TotalCases />
-              </Box>
-            </GridItem>
+            <a href="/world-trend-details/deaths-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    Deaths
+                  </Heading>
+                  <WorldTrends_Deaths />
+                </Box>
+              </GridItem>
+            </a>
 
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  New Cases
-                </Heading>
-                <WorldTrends_NewCases />
-              </Box>
-            </GridItem>
+            <a href="/world-trend-details/total-cases-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    Total Cases
+                  </Heading>
+                  <WorldTrends_TotalCases />
+                </Box>
+              </GridItem>
+            </a>
 
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  Hospitalizations
-                </Heading>
-              </Box>
-              <WorldTrends_Hospitalizations />
-            </GridItem>
+            <a href="/world-trend-details/new-cases-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    New Cases
+                  </Heading>
+                  <WorldTrends_NewCases />
+                </Box>
+              </GridItem>
+            </a>
 
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  Recoveries
-                </Heading>
-              </Box>
-              <WorldTrends_Recoveries />
-            </GridItem>
+            <a href="/world-trend-details/hospitalizations-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    Hospitalizations
+                  </Heading>
+                </Box>
+                <WorldTrends_Hospitalizations />
+              </GridItem>
+            </a>
 
-            <GridItem>
-              <Box textAlign={"center"}>
-                <Heading as="h2" size="md" mb={1}>
-                  Case Fatality Rate
-                </Heading>
-              </Box>
-              <WorldTrends_CFR />
-            </GridItem>
+            <a href="/world-trend-details/recoveries-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    Recoveries
+                  </Heading>
+                </Box>
+                <WorldTrends_Recoveries />
+              </GridItem>
+            </a>
+
+            <a href="/world-trend-details/cfr-detail">
+              <GridItem className="homepage-clickable-grid">
+                <Box textAlign={"center"}>
+                  <Heading as="h2" size="md" mb={1}>
+                    Case Fatality Rate
+                  </Heading>
+                </Box>
+                <WorldTrends_CFR />
+              </GridItem>
+            </a>
           </SimpleGrid>
         </Container>
 

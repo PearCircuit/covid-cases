@@ -9,3 +9,20 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.homepage-clickable-grid {
+  border-color: #eee #ddd #bbb;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+
+  padding: 16px 16px 16px 16px;
+}
+
+.homepage-clickable-grid:hover {
+  border-color: #eee #ddd #bbb;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(29, 155, 240, 0.1);
+}
