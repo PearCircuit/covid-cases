@@ -17,6 +17,7 @@ import {
   GridItem,
   SimpleGrid,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 import TwitterFeedEmbed from "./components/social/TwitterFeedEmbed.js";
 import TwitterButton from "./components/social/TwitterButton.js";
