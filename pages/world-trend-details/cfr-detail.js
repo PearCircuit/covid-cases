@@ -1,6 +1,7 @@
 import Head from "next/head";
 import dynamic from "next/dynamic.js";
 import Chart from "chart.js/auto";
+import Link from "next/link";
 
 import { Container, Heading, Text, Button } from "@chakra-ui/react";
 import { colors } from "../../styles/colors.js";
@@ -68,9 +69,9 @@ export default function CFRDetailPage() {
             21 individuals are no longer updated and may not always be included
             in tallies published by other sources.
           </Text>
-          <a href="/">
+          <Link href="/">
             <Button>Return to the homepage</Button>
-          </a>
+          </Link>
           <Heading as="h2" mt={10} mb={5} size="md">
             Full 2022 case data
           </Heading>
