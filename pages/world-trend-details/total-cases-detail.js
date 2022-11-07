@@ -4,6 +4,7 @@ import Chart from "chart.js/auto";
 
 import { Container, Heading, Text, Button } from "@chakra-ui/react";
 import { colors } from "../../styles/colors.js";
+import WorldTable_FullHistory from "../components/WorldTable_FullHistory.js";
 
 const WorldTrends_TotalCases = dynamic(
   () => import("../components/worldTrends/WorldTrends_TotalCases.js"),
@@ -69,6 +70,11 @@ export default function TotalCasesDetailPage() {
           <a href="/">
             <Button>Return to the homepage</Button>
           </a>
+          <Heading as="h2" mt={10} mb={5} size="md">
+            Full 2022 case data
+          </Heading>
+
+          <WorldTable_FullHistory />
         </Container>
       </div>
     </>
