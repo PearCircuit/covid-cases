@@ -17,6 +17,7 @@ import {
 import { colors } from "../../styles/colors.js";
 import ReactTooltip from "react-tooltip";
 
+
 import { SearchIcon } from "@chakra-ui/icons";
 
 import Link from "next/link";

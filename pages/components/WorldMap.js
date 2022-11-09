@@ -59,7 +59,7 @@ const WorldMapChart = ({ setTooltipContent }) => {
 
                 const colorScale = scaleLinear()
                   .domain([0, 100])
-                  .range([colors.darkOrange, colors.spaceCadet]);
+                  .range([colors.darkOrange, colors.tyrianPurple]);
 
                 return (
                   <Geography
