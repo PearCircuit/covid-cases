@@ -1,4 +1,4 @@
-const siteUrl = "https://www.ebola-cases.com";
+const siteUrl = "https://ebola-cases.com";
 
 module.exports = {
   siteUrl,
