@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Ebola Cases | About</title>
+        <title>Covid Cases | About</title>
         <meta httpEquiv="content-language" content="en-gb" />
 
         <meta
