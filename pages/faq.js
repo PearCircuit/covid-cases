@@ -98,11 +98,11 @@ export default function FAQ() {
               </h2>
               <AccordionPanel pb={4}>
                 We take a very conservative approach to reporting data. Numbers
-                reported on this site are compiled from reports by the US CDC,
-                the Ugandan Ministry of Health, or the WHO. You will note
-                call-outs beneath most data indicating which of the two sources
-                provided the data displayed. The Ugandan MOH website here is our
-                current primary source: https://www.health.go.ug/.
+                reported on this site are compiled from reports by Ugandan
+                Ministry of Health or the WHO. You will note call-outs beneath
+                most data indicating which of the two sources provided the data
+                displayed. The data that we report is supplied to our team by
+                our friends at BNO News.
               </AccordionPanel>
             </AccordionItem>
 

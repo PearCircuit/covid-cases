@@ -67,18 +67,18 @@ const About = () => {
             This site is dedicated to tracking the spread of the 2022 Ebola
             virus disease outbreak, and is updated every few hours. You can view
             the countries listing page for a more detailed breakdown. You can
-            also view the states listing page for a breakdown of U.S. cases by
-            state. Follow us on twitter for more updates, or follow our partner
-            Pandemic News for details about other health crises around the
-            world.
+            follow us on Twitter for more updates.
           </Text>
 
           <Text>
-            Data is primarily sourced from the US CDC, WHO, and Ugandan Ministry
-            of Health. Sources for each case are listed{" "}
-            <a href="https://www.health.go.ug/ebola/">here</a>. Should you
-            identify any inconsistencies in the data or have additional
-            information or questions, please get in touch via Twitter.
+            Data is sourced from official totals from the Ugandan Ministry of
+            Health, and shared with our team from the team at BNO News. You can
+            find the Ugandan Ministry of Health data{" "}
+            <a href="https://www.health.go.ug/ebola/">here</a>. This website is
+            a hobby project and is not owned by BNO News, but we do work
+            together to source case information. Should you identify any
+            inconsistencies in the data or have additional information or
+            questions, please get in touch via Twitter.
           </Text>
         </Container>
       </div>
