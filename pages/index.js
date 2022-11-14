@@ -249,18 +249,18 @@ export default function Home() {
           </SimpleGrid>
         </Container>
 
-        <Container maxW={"2xl"} mt="5vh">
+        {/*} <Container maxW={"2xl"} mt="5vh">
           <Box textAlign={"center"}>
             <TwitterFeedEmbed />
           </Box>
-        </Container>
+        </Container> */}
 
         <Container maxW={"8xl"} mt="5vh">
           <Box textAlign={"center"}>
             <Heading as="h2" size="md" mb={5}>
               Global confirmed Ebola cases
             </Heading>
-            <WorldTable_FullHistory />
+            {/*<WorldTable_FullHistory /> */}
             <Text mb={5} color={"gray.500"}>
               Source:{" "}
               <a href={"https://www.health.go.ug/ebola/"}>
