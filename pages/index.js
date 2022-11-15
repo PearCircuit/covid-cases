@@ -100,34 +100,34 @@ export default function Home() {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Ebola Cases | {currentMonth} {currentYear} Ebola Cases
+          Covid Cases | {currentMonth} {currentYear} Covid Cases
         </title>
         <meta
           name="description"
-          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
         />
 
-        <meta property="og:title" content="Ebola Tracker - Ebola Statistics" />
+        <meta property="og:title" content="Covid Tracker - Covid Statistics" />
         <meta
           property="og:description"
-          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
         />
 
-        <meta property="og:url" content="https://ebola-cases.com/" />
+        <meta property="og:url" content="https://covid-tracker.com/" />
         <meta
           property="og:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="Statistics and information on the 2022 Ebola virus disease outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
         />
         <meta
           property="twitter:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -142,13 +142,13 @@ export default function Home() {
             py={{ base: 10, md: 10 }}
           >
             <Heading as="h1" size="2xl">
-              Your realtime dashboard for the 2022 Ebola outbreak
+              Your realtime dashboard for the ongoing Covid pandemic
             </Heading>
 
             <Text maxW={"5xl"}>
               We have partnered with BNO News to bring you live updates on the
-              2022 Ebola virus disease outbreak. You can follow us on twitter
-              for more updates, or follow{" "}
+              2022 Covid outbreak. You can follow us on twitter for more
+              updates, or follow{" "}
               <a
                 href="https://twitter.com/BNOFeed"
                 style={{ color: `${colors.tenneTawny}` }}
@@ -162,10 +162,10 @@ export default function Home() {
           </Stack>
         </Container>
 
-        <Container maxW="8xl" mt="1vh">
+        <Container maxW="9xl" mt="1vh">
           <SimpleGrid
-            columns={[1, null, 3]}
-            minChildWidth="350px"
+            columns={[1, null, 4]}
+            minChildWidth="320px"
             spacingX="10px"
             spacingY="30px"
           >
@@ -224,13 +224,13 @@ export default function Home() {
         <Container maxW={"8xl"} mt="5vh">
           <Box textAlign={"center"}>
             <Heading as="h2" size="md" mb={5}>
-              Global confirmed Ebola cases
+              Global confirmed Covid cases
             </Heading>
-            {/*<WorldTable_FullHistory /> */}
+            <WorldTable_FullHistory />
             <Text mb={5} color={"gray.500"}>
               Source:{" "}
-              <a href={"https://www.health.go.ug/ebola/"}>
-                Ugandan Ministry of Health
+              <a href={"https://ourworldindata.org/coronavirus"}>
+                Our World in Data
               </a>
               . Last update: {Date().toLocaleString().substring(0, 16)}
             </Text>

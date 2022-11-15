@@ -24,7 +24,7 @@ const WorldMapChart = ({ setTooltipContent }) => {
     const fetchData = async () => {
       try {
         const countryCasesUrl =
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+          "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv";
         const countryCasesRes = await fetch(countryCasesUrl);
         const countryCasesText = await countryCasesRes.text();
         const countriesCases = await csv().fromString(countryCasesText);
@@ -58,8 +58,8 @@ const WorldMapChart = ({ setTooltipContent }) => {
                 );
 
                 const colorScale = scaleLinear()
-                  .domain([0, 100])
-                  .range([colors.darkOrange, colors.cadmiumOrange]);
+                  .domain([0, 500000])
+                  .range([colors.yellowRed, colors.tenneTawny]);
 
                 return (
                   <Geography
