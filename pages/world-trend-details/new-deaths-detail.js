@@ -7,8 +7,8 @@ import { Container, Heading, Text, Button } from "@chakra-ui/react";
 import { colors } from "../../styles/colors.js";
 import WorldTable_FullHistory from "../components/WorldTable_FullHistory.js";
 
-const WorldTrends_Hospitalizations = dynamic(
-  () => import("../components/worldTrends/WorldTrends_Hospitalizations.js"),
+const WorldTrends_NewDeaths = dynamic(
+  () => import("../components/worldTrends/WorldTrends_NewDeaths.js"),
   {
     ssr: false,
   }
@@ -20,19 +20,19 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function HospitalizationsDetailPage() {
+export default function NewDeathsDetailPage() {
   return (
     <>
       <Head>
-        <title>Ebola Hospitalizations Details</title>
+        <title>Ebola Recoveries Details</title>
         <meta httpEquiv="content-language" content="en-gb" />
 
         <meta name="description" content="" />
 
-        <meta property="og:title" content="Ebola Hospitalizations Details" />
+        <meta property="og:title" content="Ebola Recoveries Details" />
         <meta
           property="og:description"
-          content="The Ebola Hospitalizations Details page provides information on the number of people who have been hospitalized from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
+          content="The Ebola Recoveries Details page provides information on the number of people who have recovered from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
         />
 
         <meta property="og:url" content="https://ebola-cases.com/" />
@@ -45,7 +45,7 @@ export default function HospitalizationsDetailPage() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="The Ebola Hospitalizations Details page provides information on the number of people who have been hospitalized from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
+          content="The Ebola Recoveries Details page provides information on the number of people who have recovered from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
         />
         <meta
           property="twitter:image"
@@ -56,17 +56,17 @@ export default function HospitalizationsDetailPage() {
       </Head>
       <div>
         <Container mt={10} mb={10} maxW={"5xl"}>
-          <Heading as="h1">Hospitalizations - Statistics Details</Heading>
-          <WorldTrends_Hospitalizations />
+          <Heading as="h1">Recoveries - Statistics Details</Heading>
+          <WorldTrends_NewDeaths />
           <Text mt={5} mb={5}>
-            We report the number of Ebola hospitalizations using data from the
-            US CDC, the World Health Organization, and the Ugandan Ministry of
-            Health. These numbers are compiled by BNO News. Today, the 2022
-            Ebola outbreak is confined to Uganda, so our data is sourced from
-            their site. NOTE: Figures include probable cases and deaths which
-            occurred in the weeks before the outbreak was declared. Probable
-            cases totaling 21 individuals are no longer updated and may not
-            always be included in tallies published by other sources.
+            We report the number of Ebola recoveries using data from the US CDC,
+            the World Health Organization, and the Ugandan Ministry of Health.
+            These numbers are compiled by BNO News. Today, the 2022 Ebola
+            outbreak is confined to Uganda, so our data is sourced from their
+            site. NOTE: Figures include probable cases and deaths which occurred
+            in the weeks before the outbreak was declared. Probable cases
+            totaling 21 individuals are no longer updated and may not always be
+            included in tallies published by other sources.
           </Text>
           <Link href="/">
             <Button>Return to the homepage</Button>

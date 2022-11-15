@@ -7,12 +7,12 @@ import { colors } from "../../../styles/colors.js";
 import { csv } from "csvtojson";
 
 export default function WorldTrends_NewCases() {
-  const [data, setData] = useState([]);
-  const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
+  const [data, setData] = useState(["World"]);
+  const [filterLocation, setFilterLocation] = useState("World"); // change to "World" to default to world
 
   useEffect(() => {
     const url =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+      "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_cases.csv";
 
     const fetchData = async () => {
       try {
@@ -27,19 +27,14 @@ export default function WorldTrends_NewCases() {
     fetchData();
   }, []);
 
-  const nonUniqueLocationOptions = JSON.parse(
-    JSON.stringify(
-      data.map((y) => {
-        return y["location"];
-      })
-    )
+  // dataset quirk - filter out these terms
+  const uniqueLocationOptions = Object.keys(data[0]).filter(
+    (location) => location != "date" && location != "World"
   );
-  const uniqueLocationOptions = [...new Set(nonUniqueLocationOptions)];
-  const filter = data.filter((x) => x.location === filterLocation);
 
   const filteredDates = JSON.parse(
     JSON.stringify(
-      filter.map((y) => {
+      data.map((y) => {
         return y["date"];
       })
     )
@@ -47,15 +42,8 @@ export default function WorldTrends_NewCases() {
 
   const filteredNewCases = JSON.parse(
     JSON.stringify(
-      filter.map((y) => {
-        return y["new_cases_smoothed"];
-      })
-    )
-  );
-  const filteredNewCasesPerMillion = JSON.parse(
-    JSON.stringify(
-      filter.map((y) => {
-        return y["new_cases_per_million"];
+      data.map((y) => {
+        return y[filterLocation];
       })
     )
   );
@@ -65,24 +53,24 @@ export default function WorldTrends_NewCases() {
     datasets: [
       {
         label: "New Cases",
-        fill: false,
+        fill: true,
         lineTension: 0.1,
-        backgroundColor: colors.tenneTawny,
-        borderColor: colors.tenneTawny,
+        backgroundColor: colors.yellowRed,
+        borderColor: colors.yellowRed,
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: colors.tenneTawny,
-        pointBackgroundColor: colors.tenneTawny,
+        pointBorderColor: colors.yellowRed,
+        pointBackgroundColor: colors.yellowRed,
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.tenneTawny,
-        pointHoverBorderColor: colors.tenneTawny,
+        pointHoverBackgroundColor: colors.yellowRed,
+        pointHoverBorderColor: colors.yellowRed,
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
         pointHitRadius: 10,
         data: filteredNewCases,
+        pointRadius: 0,
       },
     ],
   };
@@ -90,21 +78,21 @@ export default function WorldTrends_NewCases() {
   return (
     <>
       <Box mt={2} mb={2}>
-        {/* 
-        <Select onChange={(e) => setFilterLocation(e.target.value)}>
-       
-          <option defaultValue={"World"}>World</option>
-       
-          {uniqueLocationOptions &&
-            uniqueLocationOptions.map((location) => (
-              <option value={location} key={location}>
-                {location}
-              </option>
-            ))}
-            </Select>*/}
+        {
+          <Select onChange={(e) => setFilterLocation(e.target.value)}>
+            <option defaultValue={"World"}>World</option>
+
+            {uniqueLocationOptions &&
+              uniqueLocationOptions.map((location) => (
+                <option value={location} key={location}>
+                  {location}
+                </option>
+              ))}
+          </Select>
+        }
 
         <div style={{ minHeight: "35vh" }}>
-          <Bar data={chartData} options={{ maintainAspectRatio: false }} />
+          <Line data={chartData} options={{ maintainAspectRatio: false }} />
         </div>
       </Box>
     </>

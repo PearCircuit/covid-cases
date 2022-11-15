@@ -7,12 +7,12 @@ import { colors } from "../../../styles/colors.js";
 import { csv } from "csvtojson";
 
 export default function WorldTrends_Deaths() {
-  const [data, setData] = useState([]);
-  const [filterLocation, setFilterLocation] = useState("Uganda"); // change to "World" to default to world
+  const [data, setData] = useState(["World"]);
+  const [filterLocation, setFilterLocation] = useState("World"); // change to "World" to default to world
 
   useEffect(() => {
     const url =
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+      "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_deaths.csv";
 
     const fetchData = async () => {
       try {
@@ -27,18 +27,14 @@ export default function WorldTrends_Deaths() {
     fetchData();
   }, []);
 
-  const nonUniqueLocationOptions = JSON.parse(
-    JSON.stringify(
-      data.map((y) => {
-        return y["location"];
-      })
-    )
+  // dataset quirk - filter out these terms
+  const uniqueLocationOptions = Object.keys(data[0]).filter(
+    (location) => location != "date" && location != "World"
   );
-  const uniqueLocationOptions = [...new Set(nonUniqueLocationOptions)];
-  const filter = data.filter((x) => x.location === filterLocation);
+
   const filteredDates = JSON.parse(
     JSON.stringify(
-      filter.map((y) => {
+      data.map((y) => {
         return y["date"];
       })
     )
@@ -46,8 +42,8 @@ export default function WorldTrends_Deaths() {
 
   const filteredTotalDeaths = JSON.parse(
     JSON.stringify(
-      filter.map((y) => {
-        return y["total_deaths"];
+      data.map((y) => {
+        return y[filterLocation];
       })
     )
   );
@@ -82,18 +78,18 @@ export default function WorldTrends_Deaths() {
   return (
     <>
       <Box mt={2} mb={2}>
-        {/* 
-        <Select onChange={(e) => setFilterLocation(e.target.value)}>
-  
-          <option defaultValue={"World"}>World</option>
-    
-          {uniqueLocationOptions &&
-            uniqueLocationOptions.map((location) => (
-              <option value={location} key={location}>
-                {location}
-              </option>
-            ))}
-        </Select>      */}
+        {
+          <Select onChange={(e) => setFilterLocation(e.target.value)}>
+            <option defaultValue={"World"}>World</option>
+
+            {uniqueLocationOptions &&
+              uniqueLocationOptions.map((location) => (
+                <option value={location} key={location}>
+                  {location}
+                </option>
+              ))}
+          </Select>
+        }
 
         <div style={{ minHeight: "35vh" }}>
           <Line data={chartData} options={{ maintainAspectRatio: false }} />

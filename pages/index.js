@@ -43,14 +43,8 @@ const WorldTrends_NewCases = dynamic(
   }
 );
 
-const WorldTrends_Hospitalizations = dynamic(
-  () => import("./components/worldTrends/WorldTrends_Hospitalizations.js"),
-  {
-    ssr: false,
-  }
-);
-const WorldTrends_Recoveries = dynamic(
-  () => import("./components/worldTrends/WorldTrends_Recoveries.js"),
+const WorldTrends_NewDeaths = dynamic(
+  () => import("./components/worldTrends/WorldTrends_NewDeaths.js"),
   {
     ssr: false,
   }
@@ -58,12 +52,6 @@ const WorldTrends_Recoveries = dynamic(
 
 const WorldTrends_Deaths = dynamic(
   () => import("./components/worldTrends/WorldTrends_Deaths.js"),
-  {
-    ssr: false,
-  }
-);
-const WorldTrends_CFR = dynamic(
-  () => import("./components/worldTrends/WorldTrends_CFR.js"),
   {
     ssr: false,
   }
@@ -214,36 +202,14 @@ export default function Home() {
               </GridItem>
             </Link>
 
-            <Link href="/world-trend-details/hospitalizations-detail">
+            <Link href="/world-trend-details/new-deaths-detail">
               <GridItem className="homepage-clickable-grid">
                 <Box textAlign={"center"}>
                   <Heading as="h2" size="md" mb={1}>
-                    Hospitalizations
+                    New Deaths
                   </Heading>
                 </Box>
-                <WorldTrends_Hospitalizations />
-              </GridItem>
-            </Link>
-
-            <Link href="/world-trend-details/recoveries-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    Recoveries
-                  </Heading>
-                </Box>
-                <WorldTrends_Recoveries />
-              </GridItem>
-            </Link>
-
-            <Link href="/world-trend-details/cfr-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    Case Fatality Rate
-                  </Heading>
-                </Box>
-                <WorldTrends_CFR />
+                <WorldTrends_NewDeaths />
               </GridItem>
             </Link>
           </SimpleGrid>

@@ -6,13 +6,13 @@ import { colors } from "../../../styles/colors.js";
 
 import { csv } from "csvtojson";
 
-export default function WorldTrends_TotalCases() {
+export default function WorldTrends_NewDeaths() {
   const [data, setData] = useState(["World"]);
   const [filterLocation, setFilterLocation] = useState("World"); // change to "World" to default to world
 
   useEffect(() => {
     const url =
-      "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/total_cases.csv";
+      "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/new_deaths.csv";
 
     const fetchData = async () => {
       try {
@@ -52,21 +52,21 @@ export default function WorldTrends_TotalCases() {
     labels: filteredDates,
     datasets: [
       {
-        label: "Total Cases",
-        fill: false,
+        label: "New Deaths",
+        fill: true,
         lineTension: 0.1,
-        backgroundColor: colors.cadmiumOrange,
-        borderColor: colors.cadmiumOrange,
+        backgroundColor: colors.yellowRed,
+        borderColor: colors.yellowRed,
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: colors.cadmiumOrange,
-        pointBackgroundColor: colors.cadmiumOrange,
+        pointBorderColor: colors.yellowRed,
+        pointBackgroundColor: colors.yellowRed,
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.cadmiumOrange,
-        pointHoverBorderColor: colors.cadmiumOrange,
+        pointHoverBackgroundColor: colors.yellowRed,
+        pointHoverBorderColor: colors.yellowRed,
         pointHoverBorderWidth: 2,
         pointHitRadius: 10,
         data: filteredTotalCases,
