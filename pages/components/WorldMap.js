@@ -59,7 +59,7 @@ const WorldMapChart = ({ setTooltipContent }) => {
 
                 const colorScale = scaleLinear()
                   .domain([0, 100])
-                  .range([colors.darkOrange, colors.tyrianPurple]);
+                  .range([colors.darkOrange, colors.cadmiumOrange]);
 
                 return (
                   <Geography
@@ -90,16 +90,16 @@ const WorldMapChart = ({ setTooltipContent }) => {
                             ? colorScale(
                                 `${d[d.length - 1].total_cases_per_million}`
                               )
-                            : colors.tumbleweed,
+                            : colors.yellowOrange,
                         outline: "none",
                       },
                       hover: {
-                        fill: colors.rubyRed,
+                        fill: colors.tenneTawny,
                       },
                       pressed: {
                         fill: d
                           ? colorScale(`${d.total_cases_per_million}`)
-                          : colors.spanishOrange,
+                          : colors.yellowRed,
                         outline: "none",
                       },
                     }}

@@ -237,7 +237,7 @@ export default function WorldTable_FullHistory() {
                       <a
                         href={`/countries/${getCountryISO2(iso_code)}`}
                         style={{
-                          color: `${colors.rubyRed}`,
+                          color: `${colors.tenneTawny}`,
                           textDecoration: "underline",
                         }}
                       >

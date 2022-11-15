@@ -163,7 +163,7 @@ export default function Home() {
               for more updates, or follow{" "}
               <a
                 href="https://twitter.com/BNOFeed"
-                style={{ color: `${colors.rubyRed}` }}
+                style={{ color: `${colors.tenneTawny}` }}
               >
                 BNO News
               </a>{" "}

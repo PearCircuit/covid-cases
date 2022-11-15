@@ -1,8 +1,7 @@
 export const colors = {
-  spanishOrange: "#E36414",
-  tumbleweed: "#E6B597",
-  darkOrange: "#FB8B24",
-  rubyRed: "#9A031E",
-  tyrianPurple: "#5F0F40",
+  yellowRed: "#FFC15E",
+  yellowOrange: "#F7B05B",
+  tenneTawny: "#CC5803",
+  cadmiumOrange: "#F7934C",
   kineticBlack: "#0F4C5C",
 };

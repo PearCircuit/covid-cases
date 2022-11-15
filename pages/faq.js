@@ -200,7 +200,7 @@ export default function FAQ() {
                 countries have data at this time, and thus not all countries
                 have detail pages. You can also use this link to travel to the{" "}
                 <Link href="/countries" aria-label="Countries" m={5} w="100%">
-                  <a style={{ color: `${colors.rubyRed}` }}>
+                  <a style={{ color: `${colors.tenneTawny}` }}>
                     countries listing
                   </a>
                 </Link>{" "}
