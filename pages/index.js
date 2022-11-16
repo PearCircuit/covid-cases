@@ -24,7 +24,7 @@ import TwitterButton from "./components/social/TwitterButton.js";
 
 import { colors } from "../styles/colors.js";
 
-const WorldMapChart = dynamic(() => import("./components/WorldMap.js"), {
+const WorldMap = dynamic(() => import("./components/WorldMap.js"), {
   ssr: false,
 });
 import WorldTable_FullHistory from "./components/WorldTable_FullHistory.js";
@@ -144,11 +144,33 @@ export default function Home() {
             <Heading as="h1" size="2xl">
               Your realtime dashboard for the ongoing Covid pandemic
             </Heading>
+            <Text maxW={"5xl"}>
+              Select a country to view more data, or scroll for more
+              information.
+            </Text>
+            <TwitterButton />
+          </Stack>
+        </Container>
 
+        <Container maxW={"4xl"} mt={5} mb={5}>
+          <WorldMap setTooltipContent={setContent} />
+          {content && (
+            <ReactTooltip>
+              <Tooltip>{content}</Tooltip>
+            </ReactTooltip>
+          )}
+        </Container>
+
+        <Container maxW={"8xl"}>
+          <Stack
+            textAlign={"center"}
+            align={"center"}
+            spacing={{ base: 5, md: 5 }}
+            py={{ base: 10, md: 10 }}
+          >
             <Text maxW={"5xl"}>
               We have partnered with BNO News to bring you live updates on the
-              2022 Covid outbreak. You can follow us on twitter for more
-              updates, or follow{" "}
+              2022 Covid outbreak. Follow{" "}
               <a
                 href="https://twitter.com/BNOFeed"
                 style={{ color: `${colors.tenneTawny}` }}
@@ -157,8 +179,6 @@ export default function Home() {
               </a>{" "}
               for details about other health crises around the world.
             </Text>
-
-            <TwitterButton />
           </Stack>
         </Container>
 
@@ -169,49 +189,54 @@ export default function Home() {
             spacingX="10px"
             spacingY="30px"
           >
-            <Link href="/world-trend-details/deaths-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    Deaths
-                  </Heading>
-                  <WorldTrends_Deaths />
-                </Box>
-              </GridItem>
-            </Link>
+            <GridItem className="homepage-clickable-grid">
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Deaths
+                </Heading>
+                <WorldTrends_Deaths />
+                <Link href="/world-trend-details/deaths-detail">
+                  <Button>Details</Button>
+                </Link>
+              </Box>
+            </GridItem>
 
-            <Link href="/world-trend-details/total-cases-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    Total Cases
-                  </Heading>
-                  <WorldTrends_TotalCases />
-                </Box>
-              </GridItem>
-            </Link>
+            <GridItem className="homepage-clickable-grid">
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  Total Cases
+                </Heading>
+                <WorldTrends_TotalCases />
+                <Link href="/world-trend-details/total-cases-detail">
+                  <Button>Details</Button>
+                </Link>
+              </Box>
+            </GridItem>
 
-            <Link href="/world-trend-details/new-cases-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    New Cases
-                  </Heading>
-                  <WorldTrends_NewCases />
-                </Box>
-              </GridItem>
-            </Link>
+            <GridItem className="homepage-clickable-grid">
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  New Cases
+                </Heading>
+                <WorldTrends_NewCases />
 
-            <Link href="/world-trend-details/new-deaths-detail">
-              <GridItem className="homepage-clickable-grid">
-                <Box textAlign={"center"}>
-                  <Heading as="h2" size="md" mb={1}>
-                    New Deaths
-                  </Heading>
-                </Box>
+                <Link href="/world-trend-details/new-cases-detail">
+                  <Button>Details</Button>
+                </Link>
+              </Box>
+            </GridItem>
+            <GridItem className="homepage-clickable-grid">
+              <Box textAlign={"center"}>
+                <Heading as="h2" size="md" mb={1}>
+                  New Deaths
+                </Heading>
                 <WorldTrends_NewDeaths />
-              </GridItem>
-            </Link>
+
+                <Link href="/world-trend-details/new-deaths-detail">
+                  <Button>Details</Button>
+                </Link>
+              </Box>
+            </GridItem>
           </SimpleGrid>
         </Container>
 

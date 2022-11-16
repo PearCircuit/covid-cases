@@ -29,7 +29,7 @@ export default function WorldTable_FullHistory() {
     const fetchData = async () => {
       try {
         const countryCasesUrl =
-          "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+          "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv";
         const countryCasesRes = await fetch(countryCasesUrl);
         const countryCasesText = await countryCasesRes.text();
         const countriesCases = await csv().fromString(countryCasesText);
@@ -37,15 +37,7 @@ export default function WorldTable_FullHistory() {
           (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
         );
 
-        const unique = sortedArray
-          .map((e) => e["date"])
-
-          // store the keys of the unique objects
-          .map((e, i, final) => final.indexOf(e) === i && i)
-
-          // eliminate the dead keys & store unique objects
-          .filter((e) => sortedArray[e])
-          .map((e) => sortedArray[e]);
+        const unique = sortedArray;
 
         const uniqueSortedAlpha = unique.sort((a, b) => {
           var locationA = a.location.toLowerCase(),
@@ -111,17 +103,9 @@ export default function WorldTable_FullHistory() {
         <Table size="sm">
           <Thead position="sticky" top={0} bgColor="white">
             <Tr>
-              <Th onClick={() => sorting("date", "string")}>
-                Date
-                {order === "ASC" && sortedCol === "date" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "date" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
+              <Th>Date</Th>
               <Th onClick={() => sorting("location", "string")}>
-                Country{" "}
+                Location{" "}
                 {order === "ASC" && sortedCol === "location" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
@@ -131,7 +115,7 @@ export default function WorldTable_FullHistory() {
               </Th>
 
               <Th onClick={() => sorting("total_cases", "float")}>
-                Total Cases
+                Cases
                 {order === "ASC" && sortedCol === "total_cases" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
@@ -148,44 +132,9 @@ export default function WorldTable_FullHistory() {
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
-              <Th onClick={() => sorting("total_hospitalized", "float")}>
-                Hospitalized
-                {order === "ASC" && sortedCol === "total_hospitalized" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "total_hospitalized" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-              <Th onClick={() => sorting("new_hospitalized", "float")}>
-                New Hospitalized
-                {order === "ASC" && sortedCol === "new_hospitalized" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "new_hospitalized" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-              <Th onClick={() => sorting("total_icu", "float")}>
-                In ICU
-                {order === "ASC" && sortedCol === "total_icu" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "total_icu" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
-              <Th onClick={() => sorting("new_icu", "float")}>
-                New ICU
-                {order === "ASC" && sortedCol === "new_icu" && (
-                  <GrAscend style={{ display: "inline" }} />
-                )}
-                {order === "DSC" && sortedCol === "new_icu" && (
-                  <GrDescend style={{ display: "inline" }} />
-                )}
-              </Th>
+
               <Th onClick={() => sorting("total_deaths", "float")}>
-                Total deaths
+                Deaths
                 {order === "ASC" && sortedCol === "total_deaths" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
@@ -203,12 +152,62 @@ export default function WorldTable_FullHistory() {
                 )}
               </Th>
 
-              <Th onClick={() => sorting("total_recovered", "float")}>
-                Recovered
-                {order === "ASC" && sortedCol === "total_recovered" && (
+              <Th onClick={() => sorting("hosp_patients", "float")}>
+                Hosp
+                {order === "ASC" && sortedCol === "hosp_patients" && (
                   <GrAscend style={{ display: "inline" }} />
                 )}
-                {order === "DSC" && sortedCol === "total_recovered" && (
+                {order === "DSC" && sortedCol === "hosp_patients" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
+              <Th onClick={() => sorting("icu_patients", "float")}>
+                ICU
+                {order === "ASC" && sortedCol === "icu_patients" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "icu_patients" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
+              <Th onClick={() => sorting("total_cases_per_million", "float")}>
+                Cases/Mil
+                {order === "ASC" && sortedCol === "total_cases_per_million" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "total_cases_per_million" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
+              <Th onClick={() => sorting("new_cases_per_million", "float")}>
+                New Cases/Mil
+                {order === "ASC" && sortedCol === "new_cases_per_million" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_cases_per_million" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
+              <Th onClick={() => sorting("deaths_per_million", "float")}>
+                Deaths/Mil
+                {order === "ASC" && sortedCol === "deaths_per_million" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "deaths_per_million" && (
+                  <GrDescend style={{ display: "inline" }} />
+                )}
+              </Th>
+
+              <Th onClick={() => sorting("new_deaths_per_million", "float")}>
+                New Deaths/Mil
+                {order === "ASC" && sortedCol === "new_deaths_per_million" && (
+                  <GrAscend style={{ display: "inline" }} />
+                )}
+                {order === "DSC" && sortedCol === "new_deaths_per_million" && (
                   <GrDescend style={{ display: "inline" }} />
                 )}
               </Th>
@@ -219,20 +218,21 @@ export default function WorldTable_FullHistory() {
               data.map(
                 ({
                   location,
-                  date,
+                  last_updated_date,
                   iso_code,
                   new_cases,
                   total_cases,
-                  total_hospitalized,
-                  new_hospitalized,
-                  total_icu,
-                  new_icu,
                   new_deaths,
                   total_deaths,
-                  total_recovered,
+                  hosp_patients,
+                  icu_patients,
+                  total_cases_per_million,
+                  new_cases_per_million,
+                  total_deaths_per_million,
+                  new_deaths_per_million,
                 }) => (
-                  <Tr key={date}>
-                    <Td>{date}</Td>
+                  <Tr key={iso_code}>
+                    <Td>{last_updated_date}</Td>
                     <Td>
                       <a
                         href={`/countries/${getCountryISO2(iso_code)}`}
@@ -244,28 +244,63 @@ export default function WorldTable_FullHistory() {
                         {location}
                       </a>
                     </Td>
-                    <Td>{parseInt(total_cases).toLocaleString()}</Td>
-                    <Td>{parseInt(new_cases).toLocaleString()}</Td>
-                    <Td>{parseInt(total_hospitalized).toLocaleString()}</Td>
-                    <Td>{parseInt(new_hospitalized).toLocaleString()}</Td>
-                    <Td>{parseInt(total_icu).toLocaleString()}</Td>
-                    <Td>{parseInt(new_icu).toLocaleString()}</Td>
-                    <Td>{parseInt(total_deaths).toLocaleString()}</Td>
-                    <Td>{parseInt(new_deaths).toLocaleString()}</Td>
-                    <Td>{parseInt(total_recovered).toLocaleString()}</Td>
+                    <Td>
+                      {parseInt(total_cases)
+                        ? parseInt(total_cases).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(new_cases)
+                        ? parseInt(new_cases).toLocaleString()
+                        : "-"}
+                    </Td>
+
+                    <Td>
+                      {parseInt(total_deaths)
+                        ? parseInt(total_deaths).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(new_deaths)
+                        ? parseInt(new_deaths).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(hosp_patients)
+                        ? parseInt(hosp_patients).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(icu_patients)
+                        ? parseInt(icu_patients).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(total_cases_per_million)
+                        ? parseInt(total_cases_per_million).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(new_cases_per_million)
+                        ? parseInt(new_cases_per_million).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(total_deaths_per_million)
+                        ? parseInt(total_deaths_per_million).toLocaleString()
+                        : "-"}
+                    </Td>
+                    <Td>
+                      {parseInt(new_deaths_per_million)
+                        ? parseInt(new_deaths_per_million).toLocaleString()
+                        : "-"}
+                    </Td>
                   </Tr>
                 )
               )}
           </Tbody>
         </Table>
       </TableContainer>
-      <Text>
-        <br />
-        NOTE: Figures include probable cases and deaths which occurred in the
-        weeks before the outbreak was declared. Probable cases totaling 21
-        individuals are no longer updated and may not always be included in
-        tallies published by other sources.
-      </Text>{" "}
     </Box>
   );
 }

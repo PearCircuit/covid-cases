@@ -18,7 +18,7 @@ import { colors } from "../../../styles/colors";
 const TwitterButton = () => {
   return (
     <>
-      <div className="centerContent">
+      {/*<div className="centerContent">
         <div className="selfCenter spaceBetween">
           <TwitterFollowButton
             onLoad={function noRefCheck() {}}
@@ -28,7 +28,7 @@ const TwitterButton = () => {
             screenName="ebola_cases"
           />
         </div>
-      </div>
+          </div>*/}
     </>
   );
 };
