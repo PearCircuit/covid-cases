@@ -320,38 +320,38 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Ebola in {stateName}, {countryName} as of {currentMonth} {currentYear}{" "}
-          | Ebola Cases
+          Covid in {stateName}, {countryName} as of {currentMonth} {currentYear}{" "}
+          | Covid Cases
         </title>
         <meta
           name="description"
-          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} Covid pandemic. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
 
         <meta
           property="og:title"
-          content={`Ebola in ${stateName}, ${countryName} as of ${currentMonth} ${currentYear} | Ebola Cases - Ebola Deaths`}
+          content={`Covid in ${stateName}, ${countryName} as of ${currentMonth} ${currentYear} | Covid Cases - Covid Deaths`}
         />
         <meta
           property="og:description"
-          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} Covid pandemic. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
 
-        <meta property="og:url" content="https://ebola-cases.com/" />
+        <meta property="og:url" content="https://covid-tracker.com/" />
         <meta
           property="og:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`Charting the ${stateName}, ${countryName} ebola outbreak. Updated ${currentMonth} ${currentYear} cases and deaths.`}
+          content={`Charting the ${stateName}, ${countryName} Covid pandemic. Updated ${currentMonth} ${currentYear} cases and deaths.`}
         />
         <meta
           property="twitter:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -396,14 +396,14 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {stateName} {countryDetails.emoji}
         </Heading>
         <Heading as="h2" size="md">
-          Ebola Outbreak: State Details
+          Covid pandemic: State Details
         </Heading>{" "}
         <Heading as="h2" mt={10} mb={5}>
-          Ebola virus disease outbreak in {stateName}, {countryName}: case
+          Covid virus disease pandemic in {stateName}, {countryName}: case
           counts, deaths, and statistics
         </Heading>
         <Text>
-          The Ebola virus is a deadly virus that causes hemorrhagic fever in
+          The Covid virus is a deadly virus that causes hemorrhagic fever in
           humans and other primates. Symptoms may appear anywhere from 2 to 21
           days after contact with the virus, with an average of 8 to 10 days.
           The course of the illness typically progresses from “dry” symptoms
@@ -413,9 +413,9 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           <br /> <br />
         </Text>
         <Text>
-          This page shows data for the ebola outbreak currently taking place in{" "}
-          <b>{stateName}</b>, located in the {countryName}. This outbreak is
-          part of the larger outbreak taking place in {countryDetails.region},
+          This page shows data for the Covid pandemic currently taking place in{" "}
+          <b>{stateName}</b>, located in the {countryName}. This pandemic is
+          part of the larger pandemic taking place in {countryDetails.region},
           specifically in {countryDetails.subregion}.
           <br />
           <br />
@@ -424,7 +424,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {stateName}-level data
         </Heading>
         <Text>
-          At present, we do not have data specific to {stateName} ebola cases or
+          At present, we do not have data specific to {stateName} Covid cases or
           deaths. However, we do have {countryName}-level data, which is
           presented below.
           <br />
@@ -441,15 +441,15 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {countryNewDeaths ? countryNewDeaths.toLocaleString() : 0} new death
           {countryNewDeaths == 1 ? `` : `s`}. The people of {countryName} have
           experienced {countryTotalCases.toLocaleString()} total case
-          {countryTotalCases == 1 ? `` : `s`} since the start of the outbreak.
+          {countryTotalCases == 1 ? `` : `s`} since the start of the pandemic.
           <br />
           <br />
-          You can use the charts on this page to explore the spread of ebola in{" "}
-          {countryName}. Lastly, you can see how the {countryName} ebola
+          You can use the charts on this page to explore the spread of Covid in{" "}
+          {countryName}. Lastly, you can see how the {countryName} Covid
           situation compares with the situation globally on the{" "}
           <Link href="/">
             <a style={{ color: `${colors.tenneTawny}` }}>
-              Ebola-Cases.com homepage
+              covid-tracker.com homepage
             </a>
           </Link>
           .
@@ -460,7 +460,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <SimpleGrid columns={[1, null, 2]}>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Total Ebola Cases</Center>
+              <Center mb={1}>{countryName}: Total Covid Cases</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -475,7 +475,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Ebola Cases per Million</Center>
+              <Center mb={1}>{countryName}: Covid Cases per Million</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -490,7 +490,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Ebola Deaths</Center>
+              <Center mb={1}>{countryName}: Covid Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -505,7 +505,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source: <a href={"https://www.health.go.ug/ebola/"}>Ugandan MOH</a>.
+          Source: <a href={"https://www.health.go.ug/Covid/"}>Ugandan MOH</a>.
           Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Container>

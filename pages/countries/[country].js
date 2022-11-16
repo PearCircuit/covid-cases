@@ -376,38 +376,38 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Ebola in {countryName} as of {currentMonth} {currentYear} | Ebola
+          Covid in {countryName} as of {currentMonth} {currentYear} | Covid
           Cases
         </title>
         <meta
           name="description"
-          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} Covid pandemic, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
 
         <meta
           property="og:title"
-          content={`Ebola in ${countryName} as of ${currentMonth} ${currentYear} | Ebola Cases - Ebola Deaths`}
+          content={`Covid in ${countryName} as of ${currentMonth} ${currentYear} | Covid Cases - Covid Deaths`}
         />
         <meta
           property="og:description"
-          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} Covid pandemic, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
 
-        <meta property="og:url" content="https://ebola-cases.com/" />
+        <meta property="og:url" content="https://covid-tracker.com/" />
         <meta
           property="og:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.com/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`Charting the ${countryName} ebola outbreak, with updated ${currentMonth} ${currentYear} case and death counts.`}
+          content={`Charting the ${countryName} Covid pandemic, with updated ${currentMonth} ${currentYear} case and death counts.`}
         />
         <meta
           property="twitter:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.com/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -438,7 +438,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           {countryName} {countryDetails.emoji}
         </Heading>
         <Heading as="h2" size="md">
-          Ebola Outbreak: Country Details
+          Covid pandemic: Country Details
         </Heading>{" "}
         <StatGroup mt={5} mb={5}>
           <Stat>
@@ -464,30 +464,40 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </Stat>
         </StatGroup>
         <Heading as="h2" mt={10} mb={5}>
-          Ebola virus disease outbreak in {countryName}: case counts, deaths,
-          and statistics
+          Covid in {countryName}: case counts, deaths, and statistics
         </Heading>
         <Text>
-          Ebola virus disease, or EVD, is a deadly disease with occasional
-          outbreaks that occur mostly on the African continent. EVD most
-          commonly affects people and nonhuman primates, such as monkeys,
-          gorillas, and chimpanzees. It is caused by an infection with a group
-          of viruses within the genus Ebolavirus. <br /> <br />
-        </Text>
-        <Text>
-          The Ebola virus is a deadly virus that causes hemorrhagic fever in
-          humans and other primates. Symptoms may appear anywhere from 2 to 21
-          days after contact with the virus, with an average of 8 to 10 days.
-          The course of the illness typically progresses from “dry” symptoms
-          initially, such as fever, aches and pains, and fatigue, and then
-          progresses to “wet” symptoms, such as diarrhea and vomiting as the
-          person becomes sicker.
+          Coronavirus disease 2019, or COVID-19, is a contagious disease caused
+          by a virus, the severe acute respiratory syndrome coronavirus 2, or
+          SARS-CoV-2. The first known case was identified in Wuhan, China, in
+          December 2019. The disease quickly spread worldwide, resulting in the
+          COVID-19 pandemic.
           <br /> <br />
         </Text>
         <Text>
-          This page shows data for the ebola virus disease outbreak currently
-          taking place in {countryName}. This outbreak is part of the larger
-          outbreak taking place in {countryDetails.region}, specifically in{" "}
+          Symptoms of Covid are variable, but often include fever, cough,
+          headache, fatigue, breathing difficulties, loss of smell, and loss of
+          taste. Symptoms may begin one to fourteen days after exposure to the
+          virus. At least a third of people who are infected do not develop
+          noticeable symptoms. Of those people who develop symptoms noticeable
+          enough to be classed as patients, most develop mild to moderate
+          symptoms, up to mild pneumonia, while 14% develop severe symptoms,
+          such as dyspnoea, hypoxia, or more than 50% lung involvement on
+          imaging. About 5% develop critical symptoms, like respiratory failure,
+          shock, or multiorgan dysfunction.
+          <br />
+          <br />
+          Older people are at a higher risk of developing severe symptoms. Some
+          people continue to experience a range of effects, called long COVID
+          for months after recovery, and damage to organs has been observed.
+          Multi-year studies are underway to further investigate the long-term
+          effects of the disease.
+          <br /> <br />
+        </Text>
+        <Text>
+          This page shows data for the Covid virus currently circulating in{" "}
+          {countryName}. This outbreak is part of the larger pandemic taking
+          place in {countryDetails.region}, specifically in{" "}
           {countryDetails.subregion}.
           <br />
           <br />
@@ -500,15 +510,15 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           {countryNewDeaths ? countryNewDeaths.toLocaleString() : 0} new death
           {countryNewDeaths == 1 ? `` : `s`}. The people of {countryName} have
           experienced {countryTotalCases.toLocaleString()} total case
-          {countryTotalCases == 1 ? `` : `s`} since the start of the outbreak.
+          {countryTotalCases == 1 ? `` : `s`} since the start of the pandemic.
           <br />
           <br />
-          You can use the charts on this page to explore the spread of ebola in{" "}
-          {countryName}. Lastly, you can see how the {countryName} ebola
+          You can use the charts on this page to explore the spread of Covid in{" "}
+          {countryName}. Lastly, you can see how the {countryName} Covid
           situation compares with the situation globally on the{" "}
           <Link href="/">
             <a style={{ color: `${colors.tenneTawny}` }}>
-              ebola-cases.com homepage
+              covid-tracker.com homepage
             </a>
           </Link>
           .
@@ -520,7 +530,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         <SimpleGrid columns={[1, null, 2]}>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Total Ebola Cases</Center>
+              <Center mb={1}>{countryName}: Total Covid Cases</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -535,7 +545,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: New Ebola Cases </Center>
+              <Center mb={1}>{countryName}: New Covid Cases </Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -550,7 +560,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Ebola Deaths</Center>
+              <Center mb={1}>{countryName}: Covid Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -565,7 +575,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Ebola Hospitalizations</Center>
+              <Center mb={1}>{countryName}: Covid Hospitalizations</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -581,13 +591,13 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
           Source:{" "}
-          <a href={"https://www.health.go.ug/ebola/"}>
+          <a href={"https://www.health.go.ug/Covid/"}>
             Ugandan Ministry of Health
           </a>
           . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
         <Heading mt={5} mb={5} as="h2" size="sm">
-          View {countryName} outbreak by subregion
+          View {countryName} pandemic by subregion
         </Heading>
         <SimpleGrid
           minChildWidth="100px"

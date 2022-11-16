@@ -43,42 +43,48 @@ const About = () => {
         <Container mt={10} mb={10} maxW={"5xl"}>
           <Heading as="h1">About</Heading>
           <Text>
-            Covid virus disease, or EVD, is a deadly disease with occasional
-            outbreaks that occur mostly on the African continent. EVD most
-            commonly affects people and nonhuman primates, such as monkeys,
-            gorillas, and chimpanzees. It is caused by an infection with a group
-            of viruses within the genus Covidvirus.
-            <br />
-            <br />
+            Coronavirus disease 2019, or COVID-19, is a contagious disease
+            caused by a virus, the severe acute respiratory syndrome coronavirus
+            2, or SARS-CoV-2. The first known case was identified in Wuhan,
+            China, in December 2019. The disease quickly spread worldwide,
+            resulting in the COVID-19 pandemic.
+            <br /> <br />
           </Text>
           <Text>
-            The Covid virus is a deadly virus that causes hemorrhagic fever in
-            humans and other primates. Symptoms may appear anywhere from 2 to 21
-            days after contact with the virus, with an average of 8 to 10 days.
-            The course of the illness typically progresses from “dry” symptoms
-            initially, such as fever, aches and pains, and fatigue, and then
-            progresses to “wet” symptoms such as diarrhea and vomiting as the
-            person becomes sicker.
+            Symptoms of Covid are variable, but often include fever, cough,
+            headache, fatigue, breathing difficulties, loss of smell, and loss
+            of taste. Symptoms may begin one to fourteen days after exposure to
+            the virus. At least a third of people who are infected do not
+            develop noticeable symptoms. Of those people who develop symptoms
+            noticeable enough to be classed as patients, most develop mild to
+            moderate symptoms, up to mild pneumonia, while 14% develop severe
+            symptoms, such as dyspnoea, hypoxia, or more than 50% lung
+            involvement on imaging. About 5% develop critical symptoms, like
+            respiratory failure, shock, or multiorgan dysfunction.
             <br />
             <br />
+            Older people are at a higher risk of developing severe symptoms.
+            Some people continue to experience a range of effects, called long
+            COVID for months after recovery, and damage to organs has been
+            observed. Multi-year studies are underway to further investigate the
+            long-term effects of the disease.
+            <br /> <br />
           </Text>
 
           <Text>
             This site is dedicated to tracking the spread of the 2022 Covid
-            virus disease outbreak, and is updated every few hours. You can view
-            the countries listing page for a more detailed breakdown. You can
-            follow us on Twitter for more updates.
+            virus, and is updated every few hours. You can view the countries
+            listing page for a more detailed breakdown. You can follow us on
+            Twitter for more updates. <br />
+            <br />
           </Text>
 
           <Text>
-            Data is sourced from official totals from the Ugandan Ministry of
-            Health, and shared with our team from the team at BNO News. You can
-            find the Ugandan Ministry of Health data{" "}
-            <a href="https://www.health.go.ug/Covid/">here</a>. This website is
-            a hobby project and is not owned by BNO News, but we do work
-            together to source case information. Should you identify any
-            inconsistencies in the data or have additional information or
-            questions, please get in touch via Twitter.
+            Data is sourced from Our Wold in Data. This website is a hobby
+            project and is not owned by BNO News, but we do work together to
+            source case information. Should you identify any inconsistencies in
+            the data or have additional information or questions, please get in
+            touch via Twitter.
           </Text>
         </Container>
       </div>

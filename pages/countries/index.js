@@ -17,7 +17,6 @@ import {
 import { colors } from "../../styles/colors.js";
 import ReactTooltip from "react-tooltip";
 
-
 import { SearchIcon } from "@chakra-ui/icons";
 
 import Link from "next/link";
@@ -42,7 +41,7 @@ export const getStaticProps = async () => {
   const countries = await JSON.parse(countrySummaryText);
 
   const countryCasesUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+    "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/latest/owid-covid-latest.csv";
 
   const countryCasesRes = await fetch(countryCasesUrl);
   const countryCasesText = await countryCasesRes.text();
@@ -67,41 +66,41 @@ const Countries = ({ countryList, countryCaseData }) => {
         <meta httpEquiv="content-language" content="en-gb" />
 
         <title>
-          Worldwide ebola cases {currentMonth} {currentYear}
+          Worldwide Covid cases {currentMonth} {currentYear}
         </title>
         <meta
           name="description"
-          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} Covid virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
 
-        <meta property="og:title" content="Ebola Cases | Countries" />
+        <meta property="og:title" content="Covid Cases | Countries" />
         <meta
           property="og:description"
-          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} Covid virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
 
-        <meta property="og:url" content="https://ebola-cases.com/" />
+        <meta property="og:url" content="https://covid-tracker.net/" />
         <meta
           property="og:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.net/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={`${currentMonth} ${currentYear} ebola virus outbreak case totals and deaths. Charts, maps, and data.`}
+          content={`${currentMonth} ${currentYear} Covid virus outbreak case totals and deaths. Charts, maps, and data.`}
         />
         <meta
           property="twitter:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.net/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container maxW="5xl">
         <Heading as="h1" mt={5}>
-          Ebola cases and deaths by country
+          Covid cases and deaths by country
         </Heading>
 
         <Container maxW={"5xl"} mt={5}>
@@ -114,12 +113,11 @@ const Countries = ({ countryList, countryCaseData }) => {
         </Container>
 
         <Text mt={5}>
-          Select a country to view more details about their Ebola situation.
+          Select a country to view more details about their Covid situation.
           Each country has a situation report, automatically generated from the
           most recent data. You can also view graphs of the disease activity in
           each country, and review data in tabular form. Data is sourced from
-          the US CDC and the Ugandan Ministry of Health. Refer to the About and
-          FAQ pages for more information on data sources.
+          Our World In Data.
         </Text>
 
         <InputGroup mt={5}>
@@ -158,15 +156,15 @@ const Countries = ({ countryList, countryCaseData }) => {
                     </Heading>
                     <Text></Text>
                     <Text>
-                      Currently active cases:{" "}
+                      Total cases:{" "}
                       {countryCaseData
                         .filter((x) => x.location.includes(countryList.name))
                         .toString()
-                        ? ~~countryCaseData
-                            .filter((x) =>
+                        ? parseInt(
+                            countryCaseData.filter((x) =>
                               x.location.includes(countryList.name)
-                            )[0]
-                            .total_cases.toString()
+                            )[0].total_cases
+                          ).toLocaleString()
                         : 0}
                     </Text>
                   </div>
