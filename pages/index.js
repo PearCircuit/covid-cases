@@ -104,13 +104,13 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid pandemic, including maps, charts, and tables from sources around the world."
         />
 
         <meta property="og:title" content="Covid Tracker - Covid Statistics" />
         <meta
           property="og:description"
-          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid pandemic, including maps, charts, and tables from sources around the world."
         />
 
         <meta property="og:url" content="https://covid-tracker.com/" />
@@ -123,7 +123,7 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="Statistics and information on the 2022 Covid outbreak, including maps, charts, and tables from sources around the world."
+          content="Statistics and information on the 2022 Covid pandemic, including maps, charts, and tables from sources around the world."
         />
         <meta
           property="twitter:image"
@@ -170,7 +170,7 @@ export default function Home() {
           >
             <Text maxW={"5xl"}>
               We have partnered with BNO News to bring you live updates on the
-              2022 Covid outbreak. Follow{" "}
+              2022 Covid pandemic. Follow{" "}
               <a
                 href="https://twitter.com/BNOFeed"
                 style={{ color: `${colors.tenneTawny}` }}
