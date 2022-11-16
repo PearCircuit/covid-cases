@@ -84,11 +84,13 @@ export const getStaticProps = async (context) => {
   const text = await res.text();
   const jsonArray = await csv().fromString(text);
 
-  const stateDataUrl = `https://api.countrystatecity.in/v1/countries/${countryIso2}/states`;
+  {
+    /*const stateDataUrl = `https://api.countrystatecity.in/v1/countries/${countryIso2}/states`;
 
   const stateDataRes = await fetch(stateDataUrl, requestOptions);
   const stateDataText = await stateDataRes.text();
-  const stateDataDetails = await JSON.parse(stateDataText);
+const stateDataDetails = await JSON.parse(stateDataText);*/
+  }
 
   const filteredJsonArray = jsonArray.filter(
     (x) => x.location === countryDetails.name
@@ -98,12 +100,15 @@ export const getStaticProps = async (context) => {
     props: {
       countryCaseData: filteredJsonArray,
       countryDetails: countryDetails,
-      states: stateDataDetails,
+      //states: stateDataDetails,
     },
   };
 };
 
-const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
+const CountryDetails = ({
+  countryCaseData,
+  countryDetails, //states
+}) => {
   const filteredDates = JSON.parse(
     JSON.stringify(
       countryCaseData.map((y) => {
@@ -512,7 +517,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </a>
           . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
-        <Heading mt={5} mb={5} as="h2" size="sm">
+        {/* <Heading mt={5} mb={5} as="h2" size="sm">
           View {countryName} situation by subregion
         </Heading>
         <SimpleGrid
@@ -530,7 +535,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
               </Link>
             </Box>
           ))}
-        </SimpleGrid>
+          </SimpleGrid>*/}
       </Container>
     </>
   );

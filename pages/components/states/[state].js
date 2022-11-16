@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+{
+  /*import React, { useState } from "react";
 import Head from "next/head.js";
 import { csv } from "csvtojson";
 import { colors } from "../../styles/colors.js";
@@ -454,6 +455,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <Button onClick={copy} mt={5}>
           {!copied ? "Copy report URL" : "Copied link!"}
         </Button>
+        
         <Text mb={5} mt={10} color={"gray.500"}>
           Source:{" "}
           <a href={"https://ourworldindata.org/covid-cases"}>
@@ -466,4 +468,5 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
   );
 };
 
-export default CountryDetails;
+export default CountryDetails;*/
+}
