@@ -24,32 +24,32 @@ export default function NewDeathsDetailPage() {
   return (
     <>
       <Head>
-        <title>Ebola Recoveries Details</title>
+        <title>Covid Recoveries Details</title>
         <meta httpEquiv="content-language" content="en-gb" />
 
         <meta name="description" content="" />
 
-        <meta property="og:title" content="Ebola Recoveries Details" />
+        <meta property="og:title" content="Covid Recoveries Details" />
         <meta
           property="og:description"
-          content="The Ebola Recoveries Details page provides information on the number of people who have recovered from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
+          content="The Covid Recoveries Details page provides information on the number of people who have recovered from Covid. The data is sourced from BNO News and includes information on the country, year, and cause of death."
         />
 
-        <meta property="og:url" content="https://ebola-cases.com/" />
+        <meta property="og:url" content="https://covid-tracker.net/" />
         <meta
           property="og:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.net/socialImg.png"
         />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content="The Ebola Recoveries Details page provides information on the number of people who have recovered from Ebola. The data is sourced from BNO News and includes information on the country, year, and cause of death."
+          content="The Covid Recoveries Details page provides information on the number of people who have recovered from Covid. The data is sourced from BNO News and includes information on the country, year, and cause of death."
         />
         <meta
           property="twitter:image"
-          content="https://ebola-cases.com/socialImg.png"
+          content="https://covid-tracker.net/socialImg.png"
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -59,14 +59,12 @@ export default function NewDeathsDetailPage() {
           <Heading as="h1">Recoveries - Statistics Details</Heading>
           <WorldTrends_NewDeaths />
           <Text mt={5} mb={5}>
-            We report the number of Ebola recoveries using data from the US CDC,
-            the World Health Organization, and the Ugandan Ministry of Health.
-            These numbers are compiled by BNO News. Today, the 2022 Ebola
-            outbreak is confined to Uganda, so our data is sourced from their
-            site. NOTE: Figures include probable cases and deaths which occurred
-            in the weeks before the outbreak was declared. Probable cases
-            totaling 21 individuals are no longer updated and may not always be
-            included in tallies published by other sources.
+            The reported death figures on a given date do not necessarily show
+            the number of new deaths on that day. This is due to delays in
+            reporting. The actual number of deaths is likely to be much higher
+            than the number of confirmed deaths. This is due to limited testing.
+            In a separate post we discuss how models of COVID-19 help us
+            estimate the actual number of deaths.
           </Text>
           <Link href="/">
             <Button>Return to the homepage</Button>
