@@ -454,68 +454,6 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         <Button onClick={copy} mt={5}>
           {!copied ? "Copy report URL" : "Copied link!"}
         </Button>
-        <SimpleGrid columns={[1, null, 2]}>
-          <GridItem w="100%" mt={10}>
-            <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Total Covid Cases</Center>
-            </Heading>
-            <div style={{ minHeight: "40vh" }}>
-              {countryCaseData[0] ? (
-                <Line
-                  data={chartDataTotalCases}
-                  options={{ maintainAspectRatio: false }}
-                />
-              ) : (
-                <Center>No cases detected yet.</Center>
-              )}
-            </div>
-          </GridItem>
-          <GridItem w="100%" mt={10}>
-            <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: New Covid Cases </Center>
-            </Heading>
-            <div style={{ minHeight: "40vh" }}>
-              {countryCaseData[0] ? (
-                <Line
-                  data={chartDataNewCases}
-                  options={{ maintainAspectRatio: false, barThickness: 5 }}
-                />
-              ) : (
-                <Center>No cases detected yet.</Center>
-              )}
-            </div>
-          </GridItem>
-          <GridItem w="100%" mt={10}>
-            <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Covid Deaths</Center>
-            </Heading>
-            <div style={{ minHeight: "40vh" }}>
-              {countryCaseData[0] ? (
-                <Line
-                  data={chartDataTotalDeaths}
-                  options={{ maintainAspectRatio: false }}
-                />
-              ) : (
-                <Center>No cases detected yet.</Center>
-              )}
-            </div>
-          </GridItem>
-          <GridItem w="100%" mt={10}>
-            <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: New Covid Deaths</Center>
-            </Heading>
-            <div style={{ minHeight: "40vh" }}>
-              {countryCaseData[0] ? (
-                <Line
-                  data={chartDataNewDeaths}
-                  options={{ maintainAspectRatio: false }}
-                />
-              ) : (
-                <Center>No cases detected yet.</Center>
-              )}
-            </div>
-          </GridItem>
-        </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
           Source:{" "}
           <a href={"https://ourworldindata.org/covid-cases"}>
