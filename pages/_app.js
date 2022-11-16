@@ -9,12 +9,11 @@ function MyApp({ Component, pageProps }) {
     <>
       <ChakraProvider>
         <Layout>
-          {/*
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
             strategy="afterInteractive"
           />
-           <Script id="google-analytics" strategy="afterInteractive">
+          <Script id="google-analytics" strategy="afterInteractive">
             {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -22,7 +21,7 @@ function MyApp({ Component, pageProps }) {
 
           gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});
   `}
-          </Script>*/}
+          </Script>
           <Script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489327921275613"
