@@ -83,7 +83,7 @@ export const getStaticProps = async (context) => {
   const countryDetails = await JSON.parse(countryDetailsText);
 
   const countryDataUrl =
-    "https://gist.githubusercontent.com/pearcircuitmike/9294ac4f756611b1d8103c0a0b879836/raw/";
+    "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/full_data.csv";
   const res = await fetch(countryDataUrl);
   const text = await res.text();
   const jsonArray = await csv().fromString(text);
@@ -128,17 +128,11 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
       })
     )
   );
-  const filteredNewCasesPerMillion = JSON.parse(
+
+  const filteredTotalDeaths = JSON.parse(
     JSON.stringify(
       countryCaseData.map((y) => {
-        return y["new_cases_per_million"];
-      })
-    )
-  );
-  const filteredTotalCasesPerMillion = JSON.parse(
-    JSON.stringify(
-      countryCaseData.map((y) => {
-        return y["total_cases_per_million"];
+        return y["total_deaths"];
       })
     )
   );
@@ -175,55 +169,13 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         pointHitRadius: 10,
         data: filteredTotalCases,
       },
-      {
-        label: "New Cases",
-        fill: true,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredNewCases,
-      },
     ],
   };
-  const chartDataTotalCasesPerMillion = {
+  const chartDataNewCases = {
     labels: filteredDates,
     datasets: [
       {
-        label: "Total Cases Per Million",
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: colors.tenneTawny,
-        borderColor: colors.tenneTawny,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.tenneTawny,
-        pointBackgroundColor: colors.tenneTawny,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.tenneTawny,
-        pointHoverBorderColor: colors.tenneTawny,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredTotalCasesPerMillion,
-      },
-      {
-        label: "New Cases Per Million",
+        label: "New Cases",
         fill: true,
         lineTension: 0.1,
         backgroundColor: colors.yellowOrange,
@@ -241,15 +193,16 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: filteredNewCasesPerMillion,
+
+        data: filteredNewCases,
       },
     ],
   };
-  const chartDataNewDeaths = {
+  const chartDataTotalDeaths = {
     labels: filteredDates,
     datasets: [
       {
-        label: "New Deaths",
+        label: "Total Deaths",
         fill: false,
         lineTension: 0.1,
         backgroundColor: colors.kineticBlack,
@@ -264,6 +217,32 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
         pointHoverRadius: 5,
         pointHoverBackgroundColor: colors.kineticBlack,
         pointHoverBorderColor: colors.kineticBlack,
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: filteredTotalDeaths,
+      },
+    ],
+  };
+  const chartDataNewDeaths = {
+    labels: filteredDates,
+    datasets: [
+      {
+        label: "New Deaths",
+        fill: true,
+        lineTension: 0.1,
+        backgroundColor: colors.cadmiumOrange,
+        borderColor: colors.cadmiumOrange,
+        borderCapStyle: "butt",
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: "miter",
+        pointBorderColor: colors.cadmiumOrange,
+        pointBackgroundColor: colors.cadmiumOrange,
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: colors.cadmiumOrange,
+        pointHoverBorderColor: colors.cadmiumOrange,
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
@@ -396,26 +375,44 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           {stateName} {countryDetails.emoji}
         </Heading>
         <Heading as="h2" size="md">
-          Covid pandemic: State Details
+          Covid Outbreak: State Details
         </Heading>{" "}
         <Heading as="h2" mt={10} mb={5}>
-          Covid virus disease pandemic in {stateName}, {countryName}: case
-          counts, deaths, and statistics
+          Covid situation in {stateName}, {countryName}: case counts, deaths,
+          and statistics
         </Heading>
         <Text>
-          The Covid virus is a deadly virus that causes hemorrhagic fever in
-          humans and other primates. Symptoms may appear anywhere from 2 to 21
-          days after contact with the virus, with an average of 8 to 10 days.
-          The course of the illness typically progresses from “dry” symptoms
-          initially, such as fever, aches and pains, and fatigue, and then
-          progresses to “wet” symptoms, such as diarrhea and vomiting as the
-          person becomes sicker.
+          Coronavirus disease 2019, or COVID-19, is a contagious disease caused
+          by a virus, the severe acute respiratory syndrome coronavirus 2, or
+          SARS-CoV-2. The first known case was identified in Wuhan, China, in
+          December 2019. The disease quickly spread worldwide, resulting in the
+          COVID-19 situation.
           <br /> <br />
         </Text>
         <Text>
-          This page shows data for the Covid pandemic currently taking place in{" "}
-          <b>{stateName}</b>, located in the {countryName}. This pandemic is
-          part of the larger pandemic taking place in {countryDetails.region},
+          Symptoms of Covid are variable, but often include fever, cough,
+          headache, fatigue, breathing difficulties, loss of smell, and loss of
+          taste. Symptoms may begin one to fourteen days after exposure to the
+          virus. At least a third of people who are infected do not develop
+          noticeable symptoms. Of those people who develop symptoms noticeable
+          enough to be classed as patients, most develop mild to moderate
+          symptoms, up to mild pneumonia, while 14% develop severe symptoms,
+          such as dyspnoea, hypoxia, or more than 50% lung involvement on
+          imaging. About 5% develop critical symptoms, like respiratory failure,
+          shock, or multiorgan dysfunction.
+          <br />
+          <br />
+          Older people are at a higher risk of developing severe symptoms. Some
+          people continue to experience a range of effects, called long COVID
+          for months after recovery, and damage to organs has been observed.
+          Multi-year studies are underway to further investigate the long-term
+          effects of the disease.
+          <br /> <br />
+        </Text>
+        <Text>
+          This page shows data for the Covid situation currently taking place in{" "}
+          <b>{stateName}</b>, located in the {countryName}. This situation is
+          part of the larger situation taking place in {countryDetails.region},
           specifically in {countryDetails.subregion}.
           <br />
           <br />
@@ -475,13 +472,13 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Covid Cases per Million</Center>
+              <Center mb={1}>{countryName}: New Covid Cases </Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
                 <Line
-                  data={chartDataTotalCasesPerMillion}
-                  options={{ maintainAspectRatio: false }}
+                  data={chartDataNewCases}
+                  options={{ maintainAspectRatio: false, barThickness: 5 }}
                 />
               ) : (
                 <Center>No cases detected yet.</Center>
@@ -491,6 +488,21 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
               <Center mb={1}>{countryName}: Covid Deaths</Center>
+            </Heading>
+            <div style={{ minHeight: "40vh" }}>
+              {countryCaseData[0] ? (
+                <Line
+                  data={chartDataTotalDeaths}
+                  options={{ maintainAspectRatio: false }}
+                />
+              ) : (
+                <Center>No cases detected yet.</Center>
+              )}
+            </div>
+          </GridItem>
+          <GridItem w="100%" mt={10}>
+            <Heading as="h3" size="sm">
+              <Center mb={1}>{countryName}: New Covid Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
@@ -505,8 +517,11 @@ const CountryDetails = ({ countryCaseData, countryDetails, stateDetails }) => {
           </GridItem>
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
-          Source: <a href={"https://www.health.go.ug/Covid/"}>Ugandan MOH</a>.
-          Last update: {Date().toLocaleString().substring(0, 16)}
+          Source:{" "}
+          <a href={"https://ourworldindata.org/covid-cases"}>
+            Our World In Data
+          </a>
+          . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
       </Container>
     </>

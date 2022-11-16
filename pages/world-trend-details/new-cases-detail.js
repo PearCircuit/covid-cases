@@ -63,8 +63,6 @@ export default function NewCasesDetailPage() {
             the number of new cases on that day. This is due to delays in
             reporting. The actual number of cases is likely to be much higher
             than the number of confirmed cases. This is due to limited testing.
-            In a separate post we discuss how models of COVID-19 help us
-            estimate the actual number of cases.
           </Text>
           <Link href="/">
             <Button>Return to the homepage</Button>

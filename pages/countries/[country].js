@@ -78,7 +78,7 @@ export const getStaticProps = async (context) => {
   const countryDetails = await JSON.parse(countryDetailsText);
 
   const countryDataUrl =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQelcvFosb_CZfKBlXr4C-n8xXGb7oPalH7tPJwLWbQynuu5vY2UW9sADUTPXoodmTq3eF6fvjbBLnG/pub?gid=0&single=true&output=csv";
+    "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/full_data.csv";
 
   const res = await fetch(countryDataUrl);
   const text = await res.text();
@@ -121,21 +121,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
   const filteredNewCases = JSON.parse(
     JSON.stringify(
       countryCaseData.map((y) => {
-        return y["new_cases_smoothed"];
-      })
-    )
-  );
-  const filteredNewCasesPerMillion = JSON.parse(
-    JSON.stringify(
-      countryCaseData.map((y) => {
-        return y["new_cases_per_million"];
-      })
-    )
-  );
-  const filteredTotalCasesPerMillion = JSON.parse(
-    JSON.stringify(
-      countryCaseData.map((y) => {
-        return y["total_cases_per_million"];
+        return y["new_cases"];
       })
     )
   );
@@ -148,17 +134,10 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
     )
   );
 
-  const filteredTotalHospitalized = JSON.parse(
+  const filteredNewDeaths = JSON.parse(
     JSON.stringify(
       countryCaseData.map((y) => {
-        return y["total_hospitalized"];
-      })
-    )
-  );
-  const filteredTotalIcu = JSON.parse(
-    JSON.stringify(
-      countryCaseData.map((y) => {
-        return y["total_icu"];
+        return y["new_deaths"];
       })
     )
   );
@@ -187,27 +166,6 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         pointHitRadius: 10,
         data: filteredTotalCases,
       },
-      {
-        label: "Total Cases Per Million",
-        fill: true,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredTotalCasesPerMillion,
-      },
     ],
   };
   const chartDataNewCases = {
@@ -215,50 +173,29 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
     datasets: [
       {
         label: "New Cases",
-        fill: false,
+        fill: true,
         lineTension: 0.1,
-        backgroundColor: colors.tenneTawny,
-        borderColor: colors.tenneTawny,
+        backgroundColor: colors.yellowOrange,
+        borderColor: colors.yellowOrange,
         borderCapStyle: "butt",
         borderDash: [],
         borderDashOffset: 0.0,
         borderJoinStyle: "miter",
-        pointBorderColor: colors.tenneTawny,
-        pointBackgroundColor: colors.tenneTawny,
+        pointBorderColor: colors.yellowOrange,
+        pointBackgroundColor: colors.yellowOrange,
         pointBorderWidth: 1,
         pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.tenneTawny,
-        pointHoverBorderColor: colors.tenneTawny,
+        pointHoverBackgroundColor: colors.yellowOrange,
+        pointHoverBorderColor: colors.yellowOrange,
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
 
         data: filteredNewCases,
       },
-      {
-        label: "New Cases Per Million",
-        fill: true,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 1,
-        data: filteredNewCasesPerMillion,
-      },
     ],
   };
-  const chartDataNewDeaths = {
+  const chartDataTotalDeaths = {
     labels: filteredDates,
     datasets: [
       {
@@ -284,12 +221,12 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
       },
     ],
   };
-  const chartDataHospitalizations = {
+  const chartDataNewDeaths = {
     labels: filteredDates,
     datasets: [
       {
-        label: "Total in Hospital",
-        fill: false,
+        label: "New Deaths",
+        fill: true,
         lineTension: 0.1,
         backgroundColor: colors.cadmiumOrange,
         borderColor: colors.cadmiumOrange,
@@ -306,28 +243,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: filteredTotalHospitalized,
-      },
-      {
-        label: "Total in ICU",
-        fill: false,
-        lineTension: 0.1,
-        backgroundColor: colors.darkOrange,
-        borderColor: colors.darkOrange,
-        borderCapStyle: "butt",
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: "miter",
-        pointBorderColor: colors.darkOrange,
-        pointBackgroundColor: colors.darkOrange,
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: colors.darkOrange,
-        pointHoverBorderColor: colors.darkOrange,
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 10,
-        data: filteredTotalIcu,
+        data: filteredNewDeaths,
       },
     ],
   };
@@ -565,7 +481,7 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
                 <Line
-                  data={chartDataNewDeaths}
+                  data={chartDataTotalDeaths}
                   options={{ maintainAspectRatio: false }}
                 />
               ) : (
@@ -575,12 +491,12 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
           </GridItem>
           <GridItem w="100%" mt={10}>
             <Heading as="h3" size="sm">
-              <Center mb={1}>{countryName}: Covid Hospitalizations</Center>
+              <Center mb={1}>{countryName}: New Covid Deaths</Center>
             </Heading>
             <div style={{ minHeight: "40vh" }}>
               {countryCaseData[0] ? (
                 <Line
-                  data={chartDataHospitalizations}
+                  data={chartDataNewDeaths}
                   options={{ maintainAspectRatio: false }}
                 />
               ) : (
@@ -591,13 +507,13 @@ const CountryDetails = ({ countryCaseData, countryDetails, states }) => {
         </SimpleGrid>
         <Text mb={5} mt={10} color={"gray.500"}>
           Source:{" "}
-          <a href={"https://www.health.go.ug/Covid/"}>
-            Ugandan Ministry of Health
+          <a href={"https://ourworldindata.org/covid-cases"}>
+            Our World In Data
           </a>
           . Last update: {Date().toLocaleString().substring(0, 16)}
         </Text>
         <Heading mt={5} mb={5} as="h2" size="sm">
-          View {countryName} pandemic by subregion
+          View {countryName} situation by subregion
         </Heading>
         <SimpleGrid
           minChildWidth="100px"

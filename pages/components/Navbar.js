@@ -28,7 +28,7 @@ const Navbar = () => {
             <a>
               <Heading fontSize="1xl">
                 <div>
-                  Ebola-Cases.com +{" "}
+                  Covid-Tracker.com +{" "}
                   <Image
                     boxSize="40px"
                     objectFit="cover"
@@ -57,15 +57,6 @@ const Navbar = () => {
               </Link>
               <Link href="/faq" aria-label="FAQ" m={5} w="100%">
                 <a>FAQ</a>
-              </Link>
-
-              <Link
-                href="https://blog.ebola-cases.com/"
-                aria-label="Blog"
-                m={5}
-                w="100%"
-              >
-                <a>Blog</a>
               </Link>
             </HStack>
           </Flex>
@@ -100,7 +91,7 @@ const Navbar = () => {
               {/*LOGO*/}
               <Heading fontSize="2xl">
                 <Link href="/" aria-label="Home" my={5} w="100%">
-                  <a onClick={() => changeDisplay("none")}>Ebola-Cases.com</a>
+                  <a onClick={() => changeDisplay("none")}>Covid-Tracker.com</a>
                 </Link>
               </Heading>
             </Flex>
@@ -125,14 +116,6 @@ const Navbar = () => {
             </Link>
             <Link href="/faq" aria-label="FAQ" m={"10px"} w="100%">
               <a onClick={() => changeDisplay("none")}>FAQ</a>
-            </Link>
-            <Link
-              href="https://blog.ebola-cases.com/"
-              aria-label="Blog"
-              m={"10px"}
-              w="100%"
-            >
-              <a onClick={() => changeDisplay("none")}>Blog</a>
             </Link>
           </Flex>
         </Flex>

@@ -64,8 +64,6 @@ export default function DeathsDetailPage() {
             the number of new deaths on that day. This is due to delays in
             reporting. The actual number of deaths is likely to be much higher
             than the number of confirmed deaths. This is due to limited testing.
-            In a separate post we discuss how models of COVID-19 help us
-            estimate the actual number of deaths.
           </Text>
           <Link href="/">
             <Button>Return to the homepage</Button>
